@@ -18,3 +18,4 @@ jobs:
             ssh-private-key: ${{ secrets.DOKKU_SSH_PRIVATE_KEY }}
             dokku-host: 'holst.club'
             app-name: 'project-2'
+            git-push-flags: '--force'
