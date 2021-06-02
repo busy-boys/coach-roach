@@ -1,7 +1,5 @@
----
-name: 'deploy'
+name: Deploy dokku
 
-# yamllint disable-line rule:truthy
 on:
   push:
     branches:
@@ -9,17 +7,14 @@ on:
 
 jobs:
   deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Cloning repo
-        uses: actions/checkout@v2
+      - uses: actions/checkout@master
+      - id: deploy
+        name: Deploy to dokku
+        uses: idoberko2/dokku-deploy-github-action@v1
         with:
-          fetch-depth: 0
-
-      - name: Push to dokku
-        uses: dokku/github-action@master
-        with:
-          # specify the `main` branch as the remote branch to push to
-          branch: 'master'
-          git_remote_url: 'ssh://dokku@holst.club:22/project-2'
-          ssh_private_key: ${{ secrets.DOKKU_SSH_PRIVATE_KEY }}
+            ssh-private-key: ${{ secrets.DOKKU_SSH_PRIVATE_KEY }}
+            dokku-host: 'holst.club'
+            app-name: 'project2'
