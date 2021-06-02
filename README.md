@@ -1,4 +1,5 @@
 # UNTITLED PROJECT 2
+[![Deploy dokku](https://github.com/busy-boys/project-2/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/busy-boys/project-2/actions/workflows/main.yml)
 
 ## Linting Setup
 
