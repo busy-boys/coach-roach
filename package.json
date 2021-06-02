@@ -1,0 +1,40 @@
+{
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "## Planning Artefacts - Retro from last Project (miro) - https://miro.com/app/board/o9J_lIEb32Q=/ - Ideation Board (miro) - https://miro.com/welcomeonboard/Mbzl4pO1mWUlMURa5UAAnufKJ4XSeDcLAULnCjJJAMmEj6suUGYhHnw66tNyATPY - Schedule (GSheet): https://docs.google.com/spreadsheets/d/1iqlQa7wTcS9SmBjPjXeTSgzkw7I3HLHaBQAS7DDayVg/edit?usp=sharing",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/busy-boys/project-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/busy-boys/project-2/issues"
+  },
+  "homepage": "https://github.com/busy-boys/project-2#readme",
+  "eslintConfig": {
+    "extends": [
+      "wesbos"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-config-wesbos": "^1.0.1",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.3.0"
+  }
+}
