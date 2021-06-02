@@ -17,4 +17,4 @@ jobs:
         with:
             ssh-private-key: ${{ secrets.DOKKU_SSH_PRIVATE_KEY }}
             dokku-host: 'holst.club'
-            app-name: 'project2'
+            app-name: 'project-2'
