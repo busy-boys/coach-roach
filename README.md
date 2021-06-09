@@ -2,6 +2,11 @@
 
 [![Deploy dokku](https://github.com/busy-boys/project-2/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/busy-boys/project-2/actions/workflows/main.yml)
 
+## Brances
+
+- main: this will be used the same as last project. This should be the working version with merges made to this branch when an issue/task is fixed/finished.
+- deploy: this is set to automatically update the server after a PR/merge to this branch.This will be done when we are happy with the state of main and we can then PR main over to deploy. This should help us avoid breaking changes from ending up on the live version of the site.
+
 ## Linting Setup
 
 I have included all the config files in the repo so you should just be able to:
