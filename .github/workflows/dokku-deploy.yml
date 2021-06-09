@@ -1,9 +1,9 @@
-name: Deploy dokku
+name: Deploy to dokku on busyboys.co
 
 on:
   push:
     branches:
-      - main
+      - deploy
 
 jobs:
   deploy:
@@ -12,12 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-            fetch-depth: 0
+          fetch-depth: 0
       - id: deploy
         name: Deploy to dokku
         uses: idoberko2/dokku-deploy-github-action@v1
         with:
-            ssh-private-key: ${{ secrets.DOKKU_SSH_PRIVATE_KEY }}
-            dokku-host: 'holst.club'
-            app-name: 'project-2'
-            git-push-flags: '--force'
+          ssh-private-key: ${{ secrets.DOKKU_SSH_PRIVATE_KEY }}
+          dokku-host: "holst.club"
+          app-name: "project-2"
+          git-push-flags: "--force"
