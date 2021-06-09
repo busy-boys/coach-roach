@@ -1,4 +1,5 @@
 # UNTITLED PROJECT 2
+
 [![Deploy dokku](https://github.com/busy-boys/project-2/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/busy-boys/project-2/actions/workflows/main.yml)
 
 ## Linting Setup
@@ -9,9 +10,11 @@ I have included all the config files in the repo so you should just be able to:
 
 - esLint: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 - prettier: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+- better Comments: https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments
+- Spell Right: https://marketplace.visualstudio.com/items?itemName=ban.spellright
 
 2. Clone the repo down.
-3. check you have 2 ticks next to esLint and prettier in bottom right of vsCode
+3. check you have 2 ticks next to esLint and prettier in bottom right of vsCode (you might have to hit allow, or click on esLint and click allow)
 4. get lint'n with it 🎵🎵🎵.
 
 ## Planning Artifacts
