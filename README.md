@@ -19,6 +19,16 @@ I have included all the config files in the repo so you should just be able to:
 
 ## Planning Artifacts
 
+### Current Documents
+
+- Press Release - https://docs.google.com/document/d/1Ckb6kDcDNbExon3pL5g2TDfwMXjKRPVZW8NiJOsPpeU/edit?usp=sharing
 - Retro from last Project (miro) - https://miro.com/app/board/o9J_lIEb32Q=/
 - Ideation Board (miro) - https://miro.com/welcomeonboard/Mbzl4pO1mWUlMURa5UAAnufKJ4XSeDcLAULnCjJJAMmEj6suUGYhHnw66tNyATPY
 - Schedule (GSheet): https://docs.google.com/spreadsheets/d/1iqlQa7wTcS9SmBjPjXeTSgzkw7I3HLHaBQAS7DDayVg/edit?usp=sharing
+
+### Last Projects Docs For Reference
+
+- Ideas Mindmap(miro - DH): https://miro.com/app/board/o9J_lLCDpmA=/
+- Press Release(gDocs - RD): https://docs.google.com/document/d/1Q2Gf5zk3omoVm2tt6A052eonAAIgv9Tv5nCK8J4AOdo/edit
+- User Story Map(miro - RD): https://miro.com/app/board/o9J_lLHiAz8=/
+- Presentation (gDocs - DH): https://docs.google.com/presentation/d/1gv9gyDsamKki7G_IJToTdn2gSMKsKPZG3JOmLZzKVPc/edit?usp=sharing
