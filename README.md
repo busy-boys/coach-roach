@@ -26,6 +26,7 @@ I have included all the config files in the repo so you should just be able to:
 
 ### Current Documents
 
+- User Story Map - https://miro.com/app/board/o9J_lAf5CJ8=/
 - Press Release - https://docs.google.com/document/d/1Ckb6kDcDNbExon3pL5g2TDfwMXjKRPVZW8NiJOsPpeU/edit?usp=sharing
 - Retro from last Project (miro) - https://miro.com/app/board/o9J_lIEb32Q=/
 - Ideation Board (miro) - https://miro.com/welcomeonboard/Mbzl4pO1mWUlMURa5UAAnufKJ4XSeDcLAULnCjJJAMmEj6suUGYhHnw66tNyATPY
