@@ -1,6 +1,6 @@
 # UNTITLED PROJECT 2
 
-[![Deploy dokku](https://github.com/busy-boys/project-2/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/busy-boys/project-2/actions/workflows/main.yml)
+[![Deploy dokku](https://github.com/busy-boys/project-2/actions/workflows/dokku-deploy.yml/badge.svg?branch=deploy)](https://github.com/busy-boys/project-2/actions/workflows/dokku-reply.yml)
 
 ## Brances
 
