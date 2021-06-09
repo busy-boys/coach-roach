@@ -10,4 +10,8 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/git', (req, res) =>
+  res.redirect('https://github.com/busy-boys/project-2')
+);
+
 module.exports = router;
