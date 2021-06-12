@@ -1,6 +1,27 @@
 # UNTITLED PROJECT 2
 
-[![Deploy dokku](https://github.com/busy-boys/project-2/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/busy-boys/project-2/actions/workflows/main.yml)
+[![Deploy dokku](https://github.com/busy-boys/project-2/actions/workflows/dokku-deploy.yml/badge.svg?branch=deploy)](https://github.com/busy-boys/project-2/actions/workflows/dokku-reply.yml)
+
+## Naming Conventions
+### GH Issues
+`<storymap-activity-code> - issue/task title`\
+eg.\
+`A.10.10 - Password Hashing`
+          
+### Branches
+`<relevant-gh-issue>`\
+eg.\
+`A.10.10-password-hashing`
+
+### Commits
+`<storymap-activity-code>-<commit-messgae>`\
+eg.\
+`A.10.10: brypt hook working on seeds`
+
+## Brances
+
+- main: this will be used the same as last project. This should be the working version with merges made to this branch when an issue/task is fixed/finished.
+- deploy: this is set to automatically update the server after a PR/merge to this branch.This will be done when we are happy with the state of main and we can then PR main over to deploy. This should help us avoid breaking changes from ending up on the live version of the site.
 
 ## Linting Setup
 
@@ -21,6 +42,7 @@ I have included all the config files in the repo so you should just be able to:
 
 ### Current Documents
 
+- User Story Map - https://miro.com/app/board/o9J_lAf5CJ8=/
 - Press Release - https://docs.google.com/document/d/1Ckb6kDcDNbExon3pL5g2TDfwMXjKRPVZW8NiJOsPpeU/edit?usp=sharing
 - Retro from last Project (miro) - https://miro.com/app/board/o9J_lIEb32Q=/
 - Ideation Board (miro) - https://miro.com/welcomeonboard/Mbzl4pO1mWUlMURa5UAAnufKJ4XSeDcLAULnCjJJAMmEj6suUGYhHnw66tNyATPY
