@@ -1,8 +1,10 @@
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
+const session = require('express-session');
 
 const sequelize = require('./config/connection');
+const sessionConfig = require('./config/session-config');
 const routes = require('./controllers/index');
 const helpers = require('./utils/helpers');
 
@@ -15,6 +17,7 @@ const hbs = exphbs.create({ helpers });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+app.use(session(sessionConfig));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public/')));
@@ -22,5 +25,5 @@ app.use(routes);
 
 // sync db and start server.
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
 });
