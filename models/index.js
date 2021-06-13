@@ -1,6 +1,20 @@
 const User = require('./User');
 const CoachingSession = require('./CoachingSession');
+const UserCoachingSession = require('./UserCoachingSession');
 
-// TODO: Add relationships
+// I think many-to-many makes sense but I'm still not completely sure...
 
-module.exports = { User, CoachingSession };
+User.belongsToMany(CoachingSession, {
+  through: UserCoachingSession,
+  //   as: 'coachingSession',
+  foreignKey: 'user_id',
+});
+
+CoachingSession.belongsToMany(User, {
+  through: UserCoachingSession,
+  //   as: 'user',
+  foreignKey: 'coaching_session_id',
+  //   constraints: false,
+});
+
+module.exports = { User, CoachingSession, UserCoachingSession };

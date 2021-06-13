@@ -46,6 +46,13 @@ User.init(
       //   key: 'id',
       // },
     },
+    // session_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'coaching_session',
+    //     key: 'id',
+    //   },
+    // },
   },
   {
     sequelize,

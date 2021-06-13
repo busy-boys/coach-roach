@@ -2,6 +2,7 @@ require('dotenv').config();
 const sequelize = require('../config/connection');
 const seedUserData = require('./userData');
 const seedCoachingData = require('./coachingSessionData');
+const seedUserCoachingSessionsData = require('./userCoachingSessionData');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -9,6 +10,8 @@ const seedDatabase = async () => {
   await seedUserData();
 
   await seedCoachingData();
+
+  await seedUserCoachingSessionsData();
 
   process.exit(0);
 };

@@ -31,26 +31,17 @@ CoachingSession.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    // coach: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false,
-    //     references: {
-    //         model: 'user',
-    //         key: 'id',
-    //       },
-    // },
-    // couchee: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false,
-    //     references: {
-    //         model: 'user',
-    //         key: 'id',
-    //       },
-    // },
     signedOff: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
+    // user_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'user',
+    //     key: 'id',
+    //   },
+    // },
   },
   {
     sequelize,
