@@ -10,7 +10,7 @@ signupForm.addEventListener('submit', async (event) => {
   const data = new FormData(event.target);
   const signupData = Object.fromEntries(data.entries());
   try {
-    const response = await axios.post('/api/users', signupData);
+    const response = await axios.post('/api/user', signupData);
     console.log(response);
     // reload page
     // window.location.assign('/');
