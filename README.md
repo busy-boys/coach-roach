@@ -2,6 +2,22 @@
 
 [![Deploy dokku](https://github.com/busy-boys/project-2/actions/workflows/dokku-deploy.yml/badge.svg?branch=deploy)](https://github.com/busy-boys/project-2/actions/workflows/dokku-reply.yml)
 
+## Naming Conventions
+### GH Issues
+`<storymap-activity-code> - issue/task title`\
+eg.\
+`A.10.10 - Password Hashing`
+          
+### Branches
+`<relevant-gh-issue>`\
+eg.\
+`A.10.10-password-hashing`
+
+### Commits
+`<storymap-activity-code>-<commit-messgae>`\
+eg.\
+`A.10.10: brypt hook working on seeds`
+
 ## Brances
 
 - main: this will be used the same as last project. This should be the working version with merges made to this branch when an issue/task is fixed/finished.
