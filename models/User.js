@@ -38,7 +38,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    managerId: {
+    manager_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
       // references: {

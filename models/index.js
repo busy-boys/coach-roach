@@ -7,27 +7,27 @@ User.hasMany(CoachingSession, {
 });
 
 User.hasMany(CoachingSession, {
-  foreignKey: 'supervisorId',
+  foreignKey: 'supervisor_id',
 });
 
 User.hasMany(CoachingSession, {
-  foreignKey: 'superintendentId',
+  foreignKey: 'superintendent_id',
 });
 
 CoachingSession.belongsTo(User, {
-  foreignKey: 'senior_coordinatorId',
+  foreignKey: 'senior_coordinator_id',
 });
 
 CoachingSession.belongsTo(User, {
-  foreignKey: 'supervisorId',
+  foreignKey: 'supervisor_id',
 });
 
 CoachingSession.belongsTo(User, {
-  foreignKey: 'superintendentId',
+  foreignKey: 'superintendent_id',
 });
 
 User.hasOne(User, {
-  foreignKey: 'managerId',
+  foreignKey: 'manager_id',
   as: 'Manager',
 });
 
