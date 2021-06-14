@@ -7,7 +7,7 @@ const userData = [
     email: 'allenkey@hotmail.com',
     password: 'password123',
     role: 'Superintendent',
-    managerId: null,
+    manager_id: null,
   },
   {
     first_name: 'Mick',
@@ -15,7 +15,7 @@ const userData = [
     email: 'lovestosnort69@hotmail.com',
     password: 'cocaine',
     role: 'Supervisor',
-    managerId: 1,
+    manager_id: 1,
   },
   {
     first_name: 'Keith',
@@ -23,7 +23,7 @@ const userData = [
     email: 'loveguitar@hotmail.com',
     password: 'patti',
     role: 'Senior Coodinator',
-    managerId: 2,
+    manager_id: 2,
   },
   {
     first_name: 'Brian',
@@ -31,7 +31,7 @@ const userData = [
     email: 'jonesy@hotmail.com',
     password: 'alsococaine',
     role: 'Senior Coodinator',
-    managerId: 2,
+    manager_id: 2,
   },
 ];
 

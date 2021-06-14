@@ -47,7 +47,7 @@ CoachingSession.init(
       allowNull: false,
       defaultValue: false,
     },
-    senior_coordinatorId: {
+    senior_coordinator_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
       defaultValue: null,
@@ -56,7 +56,7 @@ CoachingSession.init(
       //   key: 'id',
       // },
     },
-    supervisorId: {
+    supervisor_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
       defaultValue: null,
@@ -65,7 +65,7 @@ CoachingSession.init(
       //   key: 'id',
       // },
     },
-    superintendentId: {
+    superintendent_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
       defaultValue: null,

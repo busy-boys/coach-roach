@@ -8,9 +8,9 @@ const coachingData = [
     topic: 'Pre-start meeting',
     complete: true,
     signedOff: false,
-    senior_coordinatorId: 3,
-    supervisorId: 2,
-    superintendentId: 1,
+    senior_coordinator_id: 3,
+    supervisor_id: 2,
+    superintendent_id: 1,
   },
   {
     start_time: Date.now(),
@@ -19,9 +19,9 @@ const coachingData = [
     topic: 'LiF meeting',
     complete: false,
     signedOff: true,
-    senior_coordinatorId: 4,
-    supervisorId: 2,
-    superintendentId: null,
+    senior_coordinator_id: 4,
+    supervisor_id: 2,
+    superintendent_id: null,
   },
 ];
 
