@@ -12,7 +12,7 @@ CoachingSession.init(
       autoIncrement: true,
     },
     start_time: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DATE,
       allowNull: false,
     },
     location: {
@@ -30,18 +30,50 @@ CoachingSession.init(
     complete: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+      defaultValue: false,
     },
-    signedOff: {
+    senior_coordinator_signedOff: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+      defaultValue: false,
     },
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'user',
-    //     key: 'id',
-    //   },
-    // },
+    supervisor_signedOff: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
+    superintendent_signedOff: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
+    senior_coordinatorId: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: null,
+      // references: {
+      //   model: 'user',
+      //   key: 'id',
+      // },
+    },
+    supervisorId: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: null,
+      // references: {
+      //   model: 'user',
+      //   key: 'id',
+      // },
+    },
+    superintendentId: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: null,
+      // references: {
+      //   model: 'user',
+      //   key: 'id',
+      // },
+    },
   },
   {
     sequelize,

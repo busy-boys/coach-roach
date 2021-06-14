@@ -38,21 +38,14 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    manager: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      //  references: {
+    managerId: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      // references: {
       //   model: 'user',
       //   key: 'id',
       // },
     },
-    // session_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'coaching_session',
-    //     key: 'id',
-    //   },
-    // },
   },
   {
     sequelize,
