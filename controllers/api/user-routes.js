@@ -48,6 +48,8 @@ router.post('/login', async (req, res) => {
       // If passwords match we get a true from the compare function and we get the logging in message.
       if (passwordToCheck) {
         res.status(200).json({ message: 'Now logging in' });
+        req.session.loggedIn = true;
+        res.redirect('/');
       } else {
         res.status(400).json({ error: 'Incorrect password' });
       }
@@ -58,6 +60,17 @@ router.post('/login', async (req, res) => {
     }
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+
+// Not sure about if I need to clear coookie here
+
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.clearCookie();
+      res.redirect('/');
+    });
   }
 });
 
