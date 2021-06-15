@@ -4,15 +4,11 @@
           <form id="loginForm">
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
               </div>
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-              </div>
-              <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Keep me logged in</label>
+                <input type="password" class="form-control" id="password">
               </div>
               <button type="submit" class="btn btn-info">Submit</button>
             </form>
@@ -27,27 +23,27 @@
                 
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">First Name</label>
-                  <input name="first_name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input name="first_name" type="text" maxlength="15" class="form-control" id="first_name" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Last Name</label>
-                  <input name="last_name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input name="last_name" type="text" maxlength="20" class="form-control" id="last_name" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+                  <input name="password" type="password" class="form-control" id="password">
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Role</label>
-                  <input name="role" type="text" class="form-control" id="exampleInputPassword1">
+                  <input name="role" type="text" maxlength="15" class="form-control" id="role">
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Manager</label>
-                  <input name="manager_id" type="number" class="form-control" id="exampleInputPassword1">
+                  <input name="manager_id" type="number" min="1" class="form-control" id="manager_id">
                 </div>
                 <button type="submit" class="btn btn-info">Submit</button>
               </form>
