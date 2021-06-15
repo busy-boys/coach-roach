@@ -1,5 +1,4 @@
 const router = require('express').Router();
-// TODO Import user routes when RD has finsihed them
 const bcrypt = require('bcrypt');
 const { User } = require('../../models');
 
