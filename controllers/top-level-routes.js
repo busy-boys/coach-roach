@@ -48,6 +48,14 @@ router.get('/login', async (req, res) => {
   }
 });
 
+router.get('/mysessions', (req, res) => {
+  try {
+    res.render('my-sessions');
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 // TODO add route for manager
 
 module.exports = router;
