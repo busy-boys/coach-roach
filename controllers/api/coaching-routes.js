@@ -42,13 +42,19 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const coachingData = await CoachingSession.findByPk(req.params.id, {
-      include: [{ model: User }],
+      include: [
+        {
+          model: User,
+          attributes: ['id', 'first_name', 'last_name'],
+        },
+      ],
     });
 
     if (!coachingData) {
       res.status(404).json({ message: 'No session found with that ID' });
       return;
     }
+    return res.status(200).json(coachingData);
   } catch (err) {
     res.status(500).json(err);
   }
