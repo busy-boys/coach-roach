@@ -3,17 +3,21 @@
 [![Deploy dokku](https://github.com/busy-boys/project-2/actions/workflows/dokku-deploy.yml/badge.svg?branch=deploy)](https://github.com/busy-boys/project-2/actions/workflows/dokku-reply.yml)
 
 ## Naming Conventions
+
 ### GH Issues
+
 `<storymap-activity-code> - issue/task title`\
 eg.\
 `A.10.10 - Password Hashing`
-          
+
 ### Branches
+
 `<relevant-gh-issue>`\
 eg.\
 `A.10.10-password-hashing`
 
 ### Commits
+
 `<storymap-activity-code>-<commit-messgae>`\
 eg.\
 `A.10.10: brypt hook working on seeds`
@@ -40,6 +44,11 @@ I have included all the config files in the repo so you should just be able to:
 
 ## Planning Artifacts
 
+### Hand Drawn Maps
+
+- DB Schema - [here](./assets/pdf/db-schema.pdf)
+- API & view routes - [here](./assets/pdf/view-api-routes.pdf)
+
 ### Current Documents
 
 - User Story Map - https://miro.com/app/board/o9J_lAf5CJ8=/
@@ -50,7 +59,4 @@ I have included all the config files in the repo so you should just be able to:
 
 ### Last Projects Docs For Reference
 
-- Ideas Mindmap(miro - DH): https://miro.com/app/board/o9J_lLCDpmA=/
-- Press Release(gDocs - RD): https://docs.google.com/document/d/1Q2Gf5zk3omoVm2tt6A052eonAAIgv9Tv5nCK8J4AOdo/edit
-- User Story Map(miro - RD): https://miro.com/app/board/o9J_lLHiAz8=/
 - Presentation (gDocs - DH): https://docs.google.com/presentation/d/1gv9gyDsamKki7G_IJToTdn2gSMKsKPZG3JOmLZzKVPc/edit?usp=sharing
