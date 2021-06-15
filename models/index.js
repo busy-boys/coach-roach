@@ -31,7 +31,7 @@ CoachingSession.belongsTo(User, {
 
 User.hasOne(User, {
   foreignKey: 'manager_id',
-  as: 'Manager',
+  as: 'manager',
 });
 
 module.exports = { User, CoachingSession };

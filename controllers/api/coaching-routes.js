@@ -46,7 +46,7 @@ router.get('/:id', async (req, res) => {
         {
           model: User,
           // attributes: ['id', 'first_name', 'last_name'],
-          // required: true,
+          required: true,
         },
       ],
     });
