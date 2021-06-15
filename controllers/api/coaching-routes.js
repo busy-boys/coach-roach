@@ -15,21 +15,21 @@ const { User, CoachingSession } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const coachingData = await CoachingSession.findAll({
-      attributes: [
-        'id',
-        'start_time',
-        'location',
-        'duration',
-        'topic',
-        'complete',
-        'senior_coordinator_signedOff',
-        'supervisor_signedOff',
-        'superintendent_signedOff',
-        'senior_coordinator_id',
-        'supervisor_id',
-        'superintendent_id',
-      ],
-      include: [{ model: User }],
+      // attributes: [
+      //   'id',
+      //   'start_time',
+      //   'location',
+      //   'duration',
+      //   'topic',
+      //   'complete',
+      //   'senior_coordinator_signedOff',
+      //   'supervisor_signedOff',
+      //   'superintendent_signedOff',
+      //   'senior_coordinator_id',
+      //   'supervisor_id',
+      //   'superintendent_id',
+      // ],
+      // include: [{ model: User }],
     });
     return res.status(200).json(coachingData);
   } catch (err) {
@@ -45,7 +45,8 @@ router.get('/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['id', 'first_name', 'last_name'],
+          // attributes: ['id', 'first_name', 'last_name'],
+          // required: true,
         },
       ],
     });
