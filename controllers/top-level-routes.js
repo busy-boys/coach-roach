@@ -8,7 +8,6 @@ const authCheck = require('../utils/authCheck');
 
 router.get('/', authCheck, async (req, res) => {
   try {
-    console.log('loading home??');
     res.render('home', {
       loggedIn: req.session.loggedIn,
       userId: req.session.userID,
@@ -48,21 +47,16 @@ router.get('/login', async (req, res) => {
   }
 });
 
-router.get('/mysessions', async (req, res) => {
+router.get('/mysessions', authCheck, async (req, res) => {
   try {
-    // TODO
-    // Get future sessions for me
-    // Get Pending signoffs (PAST)
-    // Get PAST that are signed off.
-
     // Get the loggedIn users session data.
-    const testID = 1002;
+    const { userID } = req.session;
     const dbSessionsData = await CoachingSession.findAll({
       where: {
         [Op.or]: {
-          senior_coordinator_id: testID,
-          supervisor_id: testID,
-          superintendent_id: testID,
+          senior_coordinator_id: userID,
+          supervisor_id: userID,
+          superintendent_id: userID,
         },
       },
       include: [
@@ -85,7 +79,7 @@ router.get('/mysessions', async (req, res) => {
       session.get({ plain: true })
     );
 
-    console.log(userSessions);
+    // console.log(userSessions);
     // add all sessions together into one array
 
     // console.log(allUserSessions);
@@ -112,7 +106,7 @@ router.get('/mysessions', async (req, res) => {
         pastTraining.push(session);
       }
     });
-    console.log(scheduledSessions);
+    // console.log(scheduledSessions);
     // console.log(pendingSignOff);
     // console.log(pastTraining);
 
