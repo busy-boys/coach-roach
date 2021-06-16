@@ -69,12 +69,10 @@ router.get('/mysessions', async (req, res) => {
         {
           model: User,
           as: 'senior_coordinator',
-          // include: [{ model: User, as: 'senior_coordinator' }],
         },
         {
           model: User,
           as: 'superintendent',
-          // include: [{ model: User, as: 'superintendent' }],
         },
         {
           model: User,
@@ -82,8 +80,7 @@ router.get('/mysessions', async (req, res) => {
         },
       ],
     });
-    // clean it up
-
+    // clean it up=
     const userSessions = dbSessionsData.map((session) =>
       session.get({ plain: true })
     );
@@ -97,36 +94,24 @@ router.get('/mysessions', async (req, res) => {
     const pendingSignOff = [];
     const pastTraining = [];
 
-    // await allUserSessions.forEach(async (session) => {
-    //   const sessionTime = new Date(session.start_time);
-    //   const nowTime = new Date();
-    //   // get names of session members
-    //   // const seniorCordinator = await User.findByPk(
-    //   //   session.senior_coordinator_id
-    //   // );
-    //   // session.senior_cordinator = seniorCordinator.get({ plain: true });
-
-    //   // const supervisor = await User.findByPk(session.supervisor_id);
-    //   // session.supervisor = supervisor.get({ plain: true });
-
-    //   // const superintendent = await User.findByPk(session.superintendent_id);
-    //   // session.superintendent = superintendent.get({ plain: true });
-
-    //   // triage results.
-    //   if (sessionTime.getTime() >= nowTime.getTime()) {
-    //     scheduledSessions.push(session);
-    //   } else if (
-    //     sessionTime.getTime() < nowTime.getTime() &&
-    //     ((!session.senior_coordinator_signedOff &&
-    //       session.senior_coordinator_id) ||
-    //       (!session.supervisor_signedOff && session.supervisor_id) ||
-    //       (!session.superintendent_signedOff && session.superintendent_id))
-    //   ) {
-    //     pendingSignOff.push(session);
-    //   } else {
-    //     pastTraining.push(session);
-    //   }
-    // });
+    await userSessions.forEach(async (session) => {
+      const sessionTime = new Date(session.start_time);
+      const nowTime = new Date();
+      // triage results.
+      if (sessionTime.getTime() >= nowTime.getTime()) {
+        scheduledSessions.push(session);
+      } else if (
+        sessionTime.getTime() < nowTime.getTime() &&
+        ((!session.senior_coordinator_signedOff &&
+          session.senior_coordinator_id) ||
+          (!session.supervisor_signedOff && session.supervisor_id) ||
+          (!session.superintendent_signedOff && session.superintendent_id))
+      ) {
+        pendingSignOff.push(session);
+      } else {
+        pastTraining.push(session);
+      }
+    });
     console.log(scheduledSessions);
     // console.log(pendingSignOff);
     // console.log(pastTraining);
