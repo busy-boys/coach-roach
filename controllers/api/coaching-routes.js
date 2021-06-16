@@ -79,13 +79,14 @@ router.post('/', async (req, res) => {
   try {
     const coachingData = await CoachingSession.create({
       topic: req.body.topic,
-      start_time: req.body.start_time,
+      start_time: req.body.date,
       duration: req.body.duration,
       location: req.body.location,
       senior_coordinator_id: req.body.senior_coordinator_id,
       supervisor_id: req.body.supervisor_id,
       superintendent_id: req.body.superintendent_id,
     });
+    console.log(coachingData);
     return res.status(200).json(coachingData);
   } catch (err) {
     res.status(500).json(err);
