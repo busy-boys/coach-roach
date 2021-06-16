@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
+const { User, CoachingSession } = require('../models');
 
 // DH importing authCheck middleware
 const authCheck = require('../utils/authCheck');
@@ -16,8 +17,17 @@ router.get('/git', (req, res) =>
   res.redirect('https://github.com/busy-boys/project-2')
 );
 
-router.get('/login', (req, res) => {
+// Login or Signup a new user.
+router.get('/login', async (req, res) => {
   try {
+    // Get Manager Data from DB
+    const dbManagerData = await User.findAll({
+      attributes: ['id', 'first_name', 'last_name'],
+      where: {
+        [User.or]: [{ role: 'Senior Coordinator' }, { role: 'Superintendent' }],
+      },
+    });
+    console.log(dbManagerData);
     res.render('login');
   } catch (error) {
     console.error(error);

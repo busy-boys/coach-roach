@@ -13,9 +13,9 @@ router.post('/', async (req, res) => {
       role: req.body.role,
       manager_id: req.body.manager_id,
     };
-    const salt = await bcrypt.genSalt(10);
+    // const salt = await bcrypt.genSalt(10);
     // Update the password key with new hashed password. SaltRounds is 10 (default value)
-    createUser.password = await bcrypt.hash(req.body.password, salt);
+    // createUser.password = await bcrypt.hash(req.body.password, salt);
     // write user data to database
     const dbUserData = await User.create(createUser);
     // add info to req.session
@@ -59,6 +59,28 @@ router.post('/login', async (req, res) => {
     }
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+// Get all users
+router.get('/', async (req, res) => {
+  try {
+    const dbAllUserData = await User.findAll({
+      include: [
+        {
+          model: User,
+          as: 'manager',
+          attributes: ['id', 'first_name', 'last_name'],
+        },
+        {
+          model: User,
+          as: 'subordinates',
+          attributes: ['id', 'first_name', 'last_name'],
+        },
+      ],
+    });
+    res.json(dbAllUserData);
+  } catch (error) {
+    console.error(error);
   }
 });
 
