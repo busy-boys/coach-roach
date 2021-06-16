@@ -23,7 +23,7 @@ const userData = [
     last_name: 'Jagger',
     email: 'lovestosnort69@hotmail.com',
     password: 'cocaine',
-    role: 'Senior Coodinator',
+    role: 'Senior Coordinator',
     manager_id: 1,
   },
   {
@@ -31,7 +31,7 @@ const userData = [
     last_name: 'Richards',
     email: 'loveguitar@hotmail.com',
     password: 'patti',
-    role: 'Senior Coodinator',
+    role: 'Senior Coordinator',
     manager_id: 2,
   },
   {
@@ -39,7 +39,7 @@ const userData = [
     last_name: 'Jones',
     email: 'jonesy@hotmail.com',
     password: 'alsococaine',
-    role: 'Senior Coodinator',
+    role: 'Senior Coordinator',
     manager_id: 2,
   },
   {
