@@ -63,6 +63,13 @@ router.get('/mysessions', (req, res) => {
     console.error(error);
   }
 });
+router.get('/mystats', (req, res) => {
+  try {
+    res.render('my-stats');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // TODO add route for manager
 
