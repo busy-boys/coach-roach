@@ -1,0 +1,22 @@
+<tr>
+  <th scope="row">{{format_date start_time}}</th>
+  <td>{{format_time start_time}}</td>
+  <td>{{duration}}</td>
+  <td>{{topic}}</td>
+  {{#if super_intendent_id}}
+    <td>{{super_intendent_id}}</td>
+  {{else}}
+    <td>Not Required</td>
+  {{/if}}
+  {{#if senior_coordinator_id}}
+    <td>{{senior_coordinator_id}}</td>
+  {{else}}
+    <td>Not Required</td>
+  {{/if}}
+  {{#if supervisor_id}}
+    <td>{{supervisor_id}}</td>
+  {{else}}
+    <td>Not Required</td>
+  {{/if}}
+
+</tr>

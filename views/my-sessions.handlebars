@@ -14,21 +14,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>8</td>
-            <td>9</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>12</td>
-            <td>14</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>15</td>
-            <td>16</td>
-          </tr>
+          {{!-- TABLE DATA IN HERE --}}
+          {{#each scheduledSessions}}
+          {{> scheduled-session}}
+          {{/each}}
         </tbody>
       </table>
       </div>

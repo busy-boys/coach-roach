@@ -61,34 +61,51 @@ router.get('/mysessions', async (req, res) => {
         {
           model: CoachingSession,
           as: 'senior_coordinator_sessions',
+          // include: [{ model: User, as: 'senior_coordinator' }],
         },
         {
           model: CoachingSession,
           as: 'superintendent_sessions',
+          // include: [{ model: User, as: 'superintendent' }],
         },
         {
           model: CoachingSession,
           as: 'supervisor_sessions',
+          // where: { supervisor_id: id },
+          include: [{ model: User, as: 'supervisor' }],
         },
       ],
     });
-
     // clean it up
     const userSessions = dbSessionsData.get({ plain: true });
+    console.log(userSessions);
     // add all sessions together into one array
     const allUserSessions = userSessions.senior_coordinator_sessions.concat(
       userSessions.superintendent_sessions,
       userSessions.supervisor_sessions
     );
-    console.log(allUserSessions);
+    // console.log(allUserSessions);
     // sort out sessions
     const scheduledSessions = [];
     const pendingSignOff = [];
     const pastTraining = [];
 
-    allUserSessions.forEach((session) => {
+    await allUserSessions.forEach(async (session) => {
       const sessionTime = new Date(session.start_time);
       const nowTime = new Date();
+      // get names of session members
+      // const seniorCordinator = await User.findByPk(
+      //   session.senior_coordinator_id
+      // );
+      // session.senior_cordinator = seniorCordinator.get({ plain: true });
+
+      // const supervisor = await User.findByPk(session.supervisor_id);
+      // session.supervisor = supervisor.get({ plain: true });
+
+      // const superintendent = await User.findByPk(session.superintendent_id);
+      // session.superintendent = superintendent.get({ plain: true });
+
+      // triage results.
       if (sessionTime.getTime() >= nowTime.getTime()) {
         scheduledSessions.push(session);
       } else if (
@@ -103,7 +120,7 @@ router.get('/mysessions', async (req, res) => {
         pastTraining.push(session);
       }
     });
-    // console.log(scheduledSessions);
+    console.log(scheduledSessions);
     // console.log(pendingSignOff);
     // console.log(pastTraining);
 
