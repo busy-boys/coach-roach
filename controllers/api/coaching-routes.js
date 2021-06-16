@@ -15,20 +15,6 @@ const { User, CoachingSession } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const coachingData = await CoachingSession.findAll({
-      // attributes: [
-      //   'id',
-      //   'start_time',
-      //   'location',
-      //   'duration',
-      //   'topic',
-      //   'complete',
-      //   'senior_coordinator_signedOff',
-      //   'supervisor_signedOff',
-      //   'superintendent_signedOff',
-      //   'senior_coordinator_id',
-      //   'supervisor_id',
-      //   'superintendent_id',
-      // ],
       include: [
         {
           model: User,
@@ -93,10 +79,12 @@ router.post('/', async (req, res) => {
   try {
     const coachingData = await CoachingSession.create({
       topic: req.body.topic,
+      start_time: req.body.start_time,
+      duration: req.body.duration,
+      location: req.body.location,
       senior_coordinator_id: req.body.senior_coordinator_id,
       supervisor_id: req.body.supervisor_id,
       superintendent_id: req.body.superintendent_id,
-      complete: req.body.complete,
     });
     return res.status(200).json(coachingData);
   } catch (err) {
