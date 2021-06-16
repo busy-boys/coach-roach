@@ -32,12 +32,24 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Signup</a>
-            </li>
+            {{#if loggedIn}}
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Logout</a>
+              </li>
+              <li class="nav-item">
+                <b>
+                  <a class="nav-link" href="/mystats">Hi, {{firstName}} {{lastName}}</a>
+
+                </b>
+              </li>
+            {{else}}
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Signup</a>
+              </li>
+            {{/if}}
           </ul>
           <ul class="navbar-nav justify-content-end">
             <li class="nav-item">

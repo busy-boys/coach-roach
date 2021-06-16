@@ -13,9 +13,9 @@ router.post('/', async (req, res) => {
       role: req.body.role,
       manager_id: req.body.manager_id,
     };
-    const salt = await bcrypt.genSalt(10);
+    // const salt = await bcrypt.genSalt(10);
     // Update the password key with new hashed password. SaltRounds is 10 (default value)
-    createUser.password = await bcrypt.hash(req.body.password, salt);
+    // createUser.password = await bcrypt.hash(req.body.password, salt);
     // write user data to database
     const dbUserData = await User.create(createUser);
     // add info to req.session
@@ -27,12 +27,14 @@ router.post('/', async (req, res) => {
       req.session.email = dbUserData.email;
       res.status(200).json(dbUserData);
     });
+    res.redirect('/');
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
+// login route
 router.post('/login', async (req, res) => {
   try {
     const userRequest = req.body;
@@ -46,9 +48,16 @@ router.post('/login', async (req, res) => {
       );
       // If passwords match we get a true from the compare function and we get the logging in message.
       if (passwordToCheck) {
-        res.status(200).json({ message: 'Now logging in' });
-        req.session.loggedIn = true;
-        res.redirect('/');
+        await req.session.save(() => {
+          req.session.loggedIn = true;
+          req.session.userID = dbUser.id;
+          req.session.firstName = dbUser.first_name;
+          req.session.lastName = dbUser.last_name;
+          req.session.email = dbUser.email;
+          res.status(200).json({ message: 'Now logging in' });
+        });
+        // res.redirect('/');
+        // console.log(req.session);
       } else {
         res.status(400).json({ error: 'Incorrect password' });
       }
@@ -57,8 +66,31 @@ router.post('/login', async (req, res) => {
         .status(400)
         .json({ error: 'No user with that email. Please try again' });
     }
-  } catch (err) {
-    res.status(500).json(err);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json(error);
+  }
+});
+// Get all users
+router.get('/', async (req, res) => {
+  try {
+    const dbAllUserData = await User.findAll({
+      include: [
+        {
+          model: User,
+          as: 'manager',
+          attributes: ['id', 'first_name', 'last_name'],
+        },
+        {
+          model: User,
+          as: 'subordinates',
+          attributes: ['id', 'first_name', 'last_name'],
+        },
+      ],
+    });
+    res.json(dbAllUserData);
+  } catch (error) {
+    console.error(error);
   }
 });
 

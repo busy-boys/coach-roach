@@ -1,59 +1,111 @@
 <div class="container">
-        <div class="container">
-          <h2>Login</h2>
-          <form id="loginForm">
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-              </div>
-              <div class="mb-3 form-check">
+  <div class="container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <div class="mb-3">
+        <label for="login-email" class="form-label">Email address</label>
+        <input
+          name="email"
+          type="email"
+          class="form-control"
+          id="login-email"
+          aria-describedby="emailHelp"
+          placeholder="john.smith@tiorinto.com.au"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          name="password"
+          minlength="8"
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="********"
+        />
+      </div>
+      {{! <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Keep me logged in</label>
-              </div>
-              <button type="submit" class="btn btn-info">Submit</button>
-            </form>
-        </div>
-          <br><br>
-          <br><br>
-          <div class="container justify-content-center">
-            <h2>Sign up</h2>
-          </div>
-          <div class="container">
-            <form id="signup-form">
-                
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">First Name</label>
-                  <input name="first_name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Last Name</label>
-                  <input name="last_name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input name="password" type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Role</label>
-                  <input name="role" type="text" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Manager</label>
-                  <input name="manager_id" type="number" class="form-control" id="exampleInputPassword1">
-                </div>
-                <button type="submit" class="btn btn-info">Submit</button>
-              </form>
-          </div>
+              </div> }}
+      <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+  </div>
+  <br /><br />
+  <br /><br />
+  <div class="container justify-content-center">
+    <h2>Sign up</h2>
+  </div>
+  <div class="container">
+    <form id="signup-form">
+
+      <div class="mb-3">
+        <label for="signup-name" class="form-label">First Name</label>
+        <input
+          name="first_name"
+          type="text"
+          class="form-control"
+          id="signup-name"
+          aria-describedby="emailHelp"
+          placeholder="John"
+        />
       </div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" 
-      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" 
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <script src="../js/create-user.js"></script>
+      <div class="mb-3">
+        <label for="signup-lastname" class="form-label">Last Name</label>
+        <input
+          name="last_name"
+          type="text"
+          class="form-control"
+          id="signup-lastname"
+          aria-describedby="emailHelp"
+          placeholder="Smith"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="signup-email" class="form-label">Email address</label>
+        <input
+          name="email"
+          type="email"
+          class="form-control"
+          id="signup-email"
+          aria-describedby="emailHelp"
+          placeholder="john.smith@tiorinto.com.au"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="signup-password" class="form-label">Password</label>
+        <input name="password" type="password" class="form-control" id="signup-password" placeholder="********" />
+      </div>
+      <div class="mb-3">
+        <label for="signup-role" class="form-label">Role</label>
+        <select name="role" class="form-control" id="signup-role">
+          <option selected>Choose your Role...</option>
+          <option value="Supervisor">Supervisor</option>
+          <option value="Senior Coordinator">Senior Coordinator</option>
+          <option value="Superintendent">Superintendent</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="signup-managerid" class="form-label">Manager</label>
+        <select name="manager_id" class="form-control" id="signup-managerid">
+          <option selected>Choose Your Line Manager...</option>
+          <option value="null">No Manager</option>
+          {{!POPULATE MANAGER ID'S INTO HERE }}
+          {{#each managers}}
+            <option value="{{this.id}}">{{this.first_name}} {{this.last_name}}</option>
+
+          {{/each}}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+  integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script src="../js/create-user.js"></script>
+<script src="../js/login-user.js"></script>

@@ -29,9 +29,16 @@ CoachingSession.belongsTo(User, {
   as: 'supervisor',
 });
 
-User.hasOne(User, {
+User.hasMany(User, {
   foreignKey: 'manager_id',
-  as: 'manager',
+  // sourceKey: 'id',
+  // constraints: false,
+  as: 'subordinates',
 });
 
+User.belongsTo(User, {
+  foreignKey: 'manager_id',
+  // sourceKey: 'manager_id',
+  as: 'manager',
+});
 module.exports = { User, CoachingSession };

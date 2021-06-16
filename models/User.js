@@ -46,6 +46,7 @@ User.init(
     manager_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
+      defaultValue: null,
       // references: {
       //   model: 'user',
       //   key: 'id',
