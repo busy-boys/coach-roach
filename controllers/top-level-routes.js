@@ -8,7 +8,13 @@ const authCheck = require('../utils/authCheck');
 
 router.get('/', authCheck, async (req, res) => {
   try {
-    res.render('home');
+    res.render('home', {
+      loggedIn: req.session.loggedIn,
+      userId: req.session.userID,
+      firstName: req.session.firstName,
+      lastName: req.session.lastName,
+      email: req.session.email,
+    });
   } catch (error) {
     console.error(error);
   }
