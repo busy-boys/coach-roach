@@ -8,6 +8,7 @@ const authCheck = require('../utils/authCheck');
 
 router.get('/', authCheck, async (req, res) => {
   try {
+    console.log('loading home??');
     res.render('home', {
       loggedIn: req.session.loggedIn,
       userId: req.session.userID,
@@ -20,6 +21,7 @@ router.get('/', authCheck, async (req, res) => {
   }
 });
 
+// git redirect
 router.get('/git', (req, res) =>
   res.redirect('https://github.com/busy-boys/project-2')
 );
