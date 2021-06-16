@@ -29,6 +29,9 @@ const coachingData = [
     senior_coordinator_id: 1003,
     supervisor_id: 1006,
     superintendent_id: 1001,
+    senior_coordinator_signedOff: true,
+    supervisor_signedOff: true,
+    superintendent_signedOff: true,
   },
   {
     start_time: newDate2,
@@ -40,6 +43,9 @@ const coachingData = [
     senior_coordinator_id: 1004,
     supervisor_id: 1007,
     superintendent_id: null,
+    senior_coordinator_signedOff: true,
+    supervisor_signedOff: true,
+    superintendent_signedOff: true,
   },
   {
     start_time: newDate3,
@@ -51,6 +57,9 @@ const coachingData = [
     senior_coordinator_id: 1005,
     supervisor_id: 1008,
     superintendent_id: 1002,
+    senior_coordinator_signedOff: true,
+    supervisor_signedOff: true,
+    superintendent_signedOff: true,
   },
   {
     start_time: newDate4,
@@ -62,6 +71,9 @@ const coachingData = [
     senior_coordinator_id: 1003,
     supervisor_id: 1009,
     superintendent_id: null,
+    senior_coordinator_signedOff: true,
+    supervisor_signedOff: true,
+    superintendent_signedOff: false,
   },
   {
     start_time: newDate5,
@@ -73,6 +85,9 @@ const coachingData = [
     senior_coordinator_id: 1004,
     supervisor_id: 1010,
     superintendent_id: null,
+    senior_coordinator_signedOff: true,
+    supervisor_signedOff: true,
+    superintendent_signedOff: false,
   },
   {
     start_time: newDate6,
@@ -84,6 +99,9 @@ const coachingData = [
     senior_coordinator_id: 1005,
     supervisor_id: 1006,
     superintendent_id: 1001,
+    senior_coordinator_signedOff: true,
+    supervisor_signedOff: true,
+    superintendent_signedOff: true,
   },
   {
     start_time: newDate7,
@@ -95,6 +113,9 @@ const coachingData = [
     senior_coordinator_id: 1003,
     supervisor_id: 1007,
     superintendent_id: 1002,
+    senior_coordinator_signedOff: true,
+    supervisor_signedOff: false,
+    superintendent_signedOff: false,
   },
   {
     start_time: newDate8,
@@ -106,6 +127,9 @@ const coachingData = [
     senior_coordinator_id: 1003,
     supervisor_id: 1008,
     superintendent_id: null,
+    senior_coordinator_signedOff: true,
+    supervisor_signedOff: true,
+    superintendent_signedOff: false,
   },
   {
     start_time: newDate9,
@@ -117,6 +141,9 @@ const coachingData = [
     senior_coordinator_id: 1005,
     supervisor_id: 1010,
     superintendent_id: 1001,
+    senior_coordinator_signedOff: false,
+    supervisor_signedOff: false,
+    superintendent_signedOff: false,
   },
   {
     start_time: newDate10,
@@ -128,6 +155,9 @@ const coachingData = [
     senior_coordinator_id: 1005,
     supervisor_id: 1006,
     superintendent_id: null,
+    senior_coordinator_signedOff: true,
+    supervisor_signedOff: true,
+    superintendent_signedOff: false,
   },
   {
     start_time: newDate11,
