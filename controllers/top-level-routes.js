@@ -34,7 +34,7 @@ router.get('/login', async (req, res) => {
     );
 
     console.log(managers);
-    res.render('login', managers);
+    res.render('login', { managers });
   } catch (error) {
     console.error(error);
   }
