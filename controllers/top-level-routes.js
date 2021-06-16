@@ -185,6 +185,13 @@ router.get('/mystats', async (req, res) => {
     res.status(500).json(err);
   }
 });
+router.get('/mystats', (req, res) => {
+  try {
+    res.render('my-stats');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get('/booksession', authCheck, async (req, res) => {
   // get managers unto separate arrays
