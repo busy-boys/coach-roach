@@ -4,14 +4,17 @@ const CoachingSession = require('./CoachingSession');
 
 User.hasMany(CoachingSession, {
   foreignKey: 'senior_coordinator_id',
+  as: 'senior_coordinator_sessions',
 });
 
 User.hasMany(CoachingSession, {
   foreignKey: 'superintendent_id',
+  as: 'superintendent_sessions',
 });
 
 User.hasMany(CoachingSession, {
   foreignKey: 'supervisor_id',
+  as: 'supervisor_sessions',
 });
 
 CoachingSession.belongsTo(User, {

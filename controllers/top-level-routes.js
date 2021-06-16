@@ -48,17 +48,75 @@ router.get('/login', async (req, res) => {
   }
 });
 
-router.get('/mysessions', (req, res) => {
+router.get('/mysessions', async (req, res) => {
   try {
-    res.render('my-sessions');
-  } catch (error) {
-    console.error(error);
-  }
-});
+    // TODO
+    // Get future sessions for me
+    // Get Pending signoffs (PAST)
+    // Get PAST that are signed off.
 
-router.get('/mysessions', (req, res) => {
-  try {
-    res.render('my-sessions');
+    // Get the loggedIn users session data.
+    const dbSessionsData = await User.findByPk(1002, {
+      include: [
+        {
+          model: CoachingSession,
+          as: 'senior_coordinator_sessions',
+        },
+        {
+          model: CoachingSession,
+          as: 'superintendent_sessions',
+        },
+        {
+          model: CoachingSession,
+          as: 'supervisor_sessions',
+        },
+      ],
+    });
+
+    // clean it up
+    const userSessions = dbSessionsData.get({ plain: true });
+    // add all sessions together into one array
+    const allUserSessions = userSessions.senior_coordinator_sessions.concat(
+      userSessions.superintendent_sessions,
+      userSessions.supervisor_sessions
+    );
+    console.log(allUserSessions);
+    // sort out sessions
+    const scheduledSessions = [];
+    const pendingSignOff = [];
+    const pastTraining = [];
+
+    allUserSessions.forEach((session) => {
+      const sessionTime = new Date(session.start_time);
+      const nowTime = new Date();
+      if (sessionTime.getTime() >= nowTime.getTime()) {
+        scheduledSessions.push(session);
+      } else if (
+        sessionTime.getTime() < nowTime.getTime() &&
+        ((!session.senior_coordinator_signedOff &&
+          session.senior_coordinator_id) ||
+          (!session.supervisor_signedOff && session.supervisor_id) ||
+          (!session.superintendent_signedOff && session.superintendent_id))
+      ) {
+        pendingSignOff.push(session);
+      } else {
+        pastTraining.push(session);
+      }
+    });
+    // console.log(scheduledSessions);
+    // console.log(pendingSignOff);
+    // console.log(pastTraining);
+
+    res.render('my-sessions', {
+      loggedIn: req.session.loggedIn,
+      userId: req.session.userID,
+      firstName: req.session.firstName,
+      lastName: req.session.lastName,
+      email: req.session.email,
+      scheduledSessions,
+      pendingSignOff,
+      pastTraining,
+    });
   } catch (error) {
     console.error(error);
   }
