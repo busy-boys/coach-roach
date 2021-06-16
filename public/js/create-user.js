@@ -13,7 +13,7 @@ signupForm.addEventListener('submit', async (event) => {
     const response = await axios.post('/api/user', signupData);
     console.log(response);
     // reload page
-    // window.location.assign('/');
+    window.location.assign('/');
   } catch (error) {
     console.error(error);
   }

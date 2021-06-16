@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
       req.session.email = dbUserData.email;
       res.status(200).json(dbUserData);
     });
-    res.redirect('/');
+    // res.redirect('/');
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
