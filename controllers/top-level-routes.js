@@ -63,9 +63,9 @@ router.get('/mysessions', (req, res) => {
     console.error(error);
   }
 });
-router.get('/my-stats', (req, res) => {
+router.get('/booksession', (req, res) => {
   try {
-    res.render('my-stats');
+    res.render('book-session');
   } catch (err) {
     res.status(500).json(err);
   }
