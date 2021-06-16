@@ -1,7 +1,10 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 
-router.get('/', async (req, res) => {
+// DH importing authCheck middleware
+const authCheck = require('../utils/authCheck');
+
+router.get('/', authCheck, async (req, res) => {
   try {
     res.render('home');
   } catch (error) {
