@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Op } = require('sequelize');
 const sequelize = require('../config/connection');
 const { User, CoachingSession } = require('../models');
 
@@ -24,11 +25,16 @@ router.get('/login', async (req, res) => {
     const dbManagerData = await User.findAll({
       attributes: ['id', 'first_name', 'last_name'],
       where: {
-        [User.or]: [{ role: 'Senior Coordinator' }, { role: 'Superintendent' }],
+        [Op.or]: [{ role: 'Senior Coordinator' }, { role: 'Superintendent' }],
       },
     });
-    console.log(dbManagerData);
-    res.render('login');
+
+    const managers = await dbManagerData.map((manager) =>
+      manager.get({ plain: true })
+    );
+
+    console.log(managers);
+    res.render('login', managers);
   } catch (error) {
     console.error(error);
   }
