@@ -29,7 +29,23 @@ router.get('/', async (req, res) => {
       //   'supervisor_id',
       //   'superintendent_id',
       // ],
-      // include: [{ model: User }],
+      include: [
+        {
+          model: User,
+          as: 'senior_coordinator',
+          attributes: ['id', 'first_name', 'last_name'],
+        },
+        {
+          model: User,
+          as: 'superintendent',
+          attributes: ['id', 'first_name', 'last_name'],
+        },
+        {
+          model: User,
+          as: 'supervisor',
+          attributes: ['id', 'first_name', 'last_name'],
+        },
+      ],
     });
     return res.status(200).json(coachingData);
   } catch (err) {
