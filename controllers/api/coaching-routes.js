@@ -61,8 +61,18 @@ router.get('/:id', async (req, res) => {
       include: [
         {
           model: User,
-          // attributes: ['id', 'first_name', 'last_name'],
-          required: true,
+          as: 'senior_coordinator',
+          attributes: ['id', 'first_name', 'last_name'],
+        },
+        {
+          model: User,
+          as: 'superintendent',
+          attributes: ['id', 'first_name', 'last_name'],
+        },
+        {
+          model: User,
+          as: 'supervisor',
+          attributes: ['id', 'first_name', 'last_name'],
         },
       ],
     });
