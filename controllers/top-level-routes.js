@@ -125,6 +125,19 @@ router.get('/mysessions', authCheck, async (req, res) => {
     console.error(error);
   }
 });
+router.get('/mystats', authCheck, async (req, res) => {
+  try {
+    res.render('my-stats', {
+      loggedIn: req.session.loggedIn,
+      userId: req.session.userID,
+      firstName: req.session.firstName,
+      lastName: req.session.lastName,
+      email: req.session.email,
+    });
+  } catch (err) {
+    console.error(err);
+  }
+});
 
 router.get('/booksession', authCheck, async (req, res) => {
   // get managers unto separate arrays
