@@ -151,19 +151,19 @@ router.get('/mystats', async (req, res) => {
 
     // (jan is 0, june is 5).
     // This will give me all the values in the cleanData array where start_time has a month value of june.
-    // Eventually there will be a switch function or something here to get the values for each month.
-    const getAllJunes = cleanData.filter(
-      (data) => data.start_time.getMonth() === 5
+    // Eventually there will be a switch statement or something here to get the values for each month.
+    const getAllValuesPerMonth = cleanData.filter(
+      (data) => data.start_time.getMonth() === 0
     );
-    console.log('getAllJunes', getAllJunes);
+    console.log('getAllValuesPerMonth', getAllValuesPerMonth);
 
     // THis will grab all the values for the duration parameter in every June session.
-    const allJuneDurations = getAllJunes.map((a) => a.duration);
-    console.log(allJuneDurations);
+    const getAllMonthlyHours = getAllValuesPerMonth.map((a) => a.duration);
+    console.log(getAllMonthlyHours);
 
     // This adds them up to get total hours per month. This value needs to be passed to the graphing function.
-    const totalDurationsforJune = allJuneDurations.reduce((a, b) => a + b, 0);
-    console.log(totalDurationsforJune);
+    const sumOfHoursPerMonth = getAllMonthlyHours.reduce((a, b) => a + b, 0);
+    console.log(sumOfHoursPerMonth);
 
     res.render('my-stats', { cleanData });
   } catch (err) {
