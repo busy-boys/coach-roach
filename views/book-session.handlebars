@@ -1,92 +1,68 @@
 <div class="container">
-        <div class="container">
-          <h2>Book Session</h2>
-          <form id="booking-form">
-            <div class="mb-3">
-              <label for="coaching-start" class="form-label">Date</label>
-              <input
-                name="date"
-                type="datetime-local"
-                class="form-control"
-                id="date"
-                placeholder="1/1/21"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="coaching-duration" class="form-label">Duration (minutes)</label>
-              <input
-                name="duration"
-                type="text"
-                class="form-control"
-                id="duration"
-                placeholder="60" 
-              />
-            </div>
-            <div class="mb-3">
-              <label for="coaching-location" class="form-label">Location</label>
-              <input
-                name="location"
-                type="text"
-                class="form-control"
-                id="location"
-                placeholder="Perth" 
-              />
-            </div>
-            <div class="mb-3">
-                <label for="coaching-topic" class="form-label">Topic</label>
-                <input
-                  name="topic"
-                  type="text"
-                  class="form-control"
-                  id="topic"
-                  placeholder="Management" 
-                />
-            </div>
-            <div class="mb-3">
-                <label for="coaching-coordinator" class="form-label">Senior Coordinator</label>
-                <select name="senior_coordinator_id" class="form-control" id="booking-coordinatorid">
-                    <option selected>Choose Your Coordinator...</option>
-                    <option value="null">No Manager</option>
-                    {{!POPULATE COORDINATOR ID'S INTO HERE }}
-                    {{#each senior_coordinators}}
-                      <option value="{{this.id}}">{{this.first_name}} {{this.last_name}}</option>
-          
-                    {{/each}}
-                  </select>
-            </div>
-            <div class="mb-3">
-                <label for="coaching-supervisor" class="form-label">Supervisor</label>
-                <select name="supervisor_id" class="form-control" id="booking-supervisorid">
-                    <option selected>Choose Your Supervisor...</option>
-                    <option value="null">No Supervisor</option>
-                    {{!POPULATE SUPERVISOR ID'S INTO HERE }}
-                    {{#each supervisors}}
-                      <option value="{{this.id}}">{{this.first_name}} {{this.last_name}}</option>
-          
-                    {{/each}}
-                  </select>
-            </div> 
-            <div class="mb-3">
-                <label for="coaching-superintendent" class="form-label">Superintendent</label>
-                <select name="superintendent_id" class="form-control" id="booking-coordinatorid">
-                    <option selected>Choose Your Superintendent...</option>
-                    <option value="null">No Superintendent</option>
-                    {{!POPULATE SUPERINTENDENT ID'S INTO HERE }}
-                    {{#each superintendents}}
-                      <option value="{{this.id}}">{{this.first_name}} {{this.last_name}}</option>
-          
-                    {{/each}}
-                  </select>
-            </div> 
-
-            <button type="submit" class="btn btn-info">Submit</button>
-          </form>
-        </div>
+  <div class="container">
+    <h2>Book Session</h2>
+    <form id="booking-form">
+      <div class="mb-3">
+        <label for="coaching-start" class="form-label">Date</label>
+        <input name="date" type="datetime-local" class="form-control" id="date" placeholder="1/1/21" />
       </div>
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-      ></script>
-      <script src="../js/create-session.js"></script>
+      <div class="mb-3">
+        <label for="coaching-duration" class="form-label">Duration (minutes)</label>
+        <input name="duration" type="text" class="form-control" id="duration" placeholder="60" />
+      </div>
+      <div class="mb-3">
+        <label for="coaching-location" class="form-label">Location</label>
+        <input name="location" type="text" class="form-control" id="location" placeholder="Perth" />
+      </div>
+      <div class="mb-3">
+        <label for="coaching-topic" class="form-label">Topic</label>
+        <input name="topic" type="text" class="form-control" id="topic" placeholder="Management" />
+      </div>
+      <div class="mb-3">
+        <label for="coaching-coordinator" class="form-label">Senior Coordinator</label>
+        <select name="senior_coordinator_id" class="form-control" id="booking-coordinatorid">
+          <option selected>Choose Your Coordinator...</option>
+          <option value="null">No Manager</option>
+          {{!POPULATE COORDINATOR ID'S INTO HERE }}
+          {{#each senior_coordinators}}
+            <option value="{{this.id}}">{{this.first_name}} {{this.last_name}}</option>
+
+          {{/each}}
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="coaching-supervisor" class="form-label">Supervisor</label>
+        <select name="supervisor_id" class="form-control" id="booking-supervisorid">
+          <option selected>Choose Your Supervisor...</option>
+          <option value="null">No Supervisor</option>
+          {{!POPULATE SUPERVISOR ID'S INTO HERE }}
+          {{#each supervisors}}
+            <option value="{{this.id}}">{{this.first_name}} {{this.last_name}}</option>
+
+          {{/each}}
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="coaching-superintendent" class="form-label">Superintendent</label>
+        <select name="superintendent_id" class="form-control" id="booking-coordinatorid">
+          <option selected>Choose Your Superintendent...</option>
+          <option value="null">No Superintendent</option>
+          {{!POPULATE SUPERINTENDENT ID'S INTO HERE }}
+          {{#each superintendents}}
+            <option value="{{this.id}}">{{this.first_name}} {{this.last_name}}</option>
+
+          {{/each}}
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+  integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script src="../js/create-session.js"></script>

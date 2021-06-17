@@ -89,6 +89,7 @@ router.post('/', async (req, res) => {
     console.log(coachingData);
     return res.status(200).json(coachingData);
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });
