@@ -224,7 +224,6 @@ const coachingData = [
   {
     start_time: newDate16,
     location: 'Perth',
-<<<<<<< HEAD
     duration: 4,
     topic: 'Pre-start meeting',
     complete: true,
@@ -247,13 +246,10 @@ const coachingData = [
   {
     start_time: newDate18,
     location: 'Busselton',
-=======
->>>>>>> ab4b5e60ed00aeae9af0c53b409da8d37626c36f
     duration: 3,
     topic: 'Leadership in the Field',
     complete: true,
     signedOff: false,
-<<<<<<< HEAD
     senior_coordinator_id: 1003,
     supervisor_id: 1006,
     superintendent_id: null,
@@ -290,11 +286,6 @@ const coachingData = [
     senior_coordinator_id: 1003,
     supervisor_id: 1009,
     superintendent_id: 1001,
-=======
-    senior_coordinator_id: 1005,
-    supervisor_id: 1007,
-    superintendent_id: 1002,
->>>>>>> ab4b5e60ed00aeae9af0c53b409da8d37626c36f
   },
 ];
 
