@@ -50,6 +50,7 @@ router.get('/login', async (req, res) => {
 router.get('/mysessions', authCheck, async (req, res) => {
   try {
     // Get the loggedIn users session data.
+    // const userID = 1003;
     const { userID } = req.session;
     const dbSessionsData = await CoachingSession.findAll({
       where: {
