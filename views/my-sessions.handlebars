@@ -1,0 +1,72 @@
+<br><br>
+      <div class="container">
+        <h3>Scheduled Sessions</h3>
+      <table class="table">
+        <thead>
+          <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Start Time</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Topic</th>
+              <th scope="col">Location</th>
+              <th scope="col">Superintendet</th>
+              <th scope="col">Senior Coordinator</th>
+              <th scope="col">Supervisor</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{!-- TABLE DATA IN HERE --}}
+          {{#each scheduledSessions}}
+          {{> scheduled-session}}
+          {{/each}}
+        </tbody>
+      </table>
+      </div>
+      <br><br>
+      <div class="container">
+        <h3>Pending Signoffs</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Start Time</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Topic</th>
+            <th scope="col">Location</th>
+            <th scope="col">Superintendent</th>
+            <th scope="col">Senior Coordinator</th>
+            <th scope="col">Supervisor</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{!-- INSTER PENDING HERE --}}
+          {{#each pendingSignOff}}
+            {{> pending-signoff}}
+          {{/each}}
+        </tbody>
+      </table>
+      </div>
+      <br><br>
+      <div class="container">
+        <h3>Past Training</h3>
+      <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Start Time</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Topic</th>
+              <th scope="col">Location</th>
+              <th scope="col">Superintendet</th>
+              <th scope="col">Senior Coordinator</th>
+              <th scope="col">Supervisor</th>
+            </tr>
+        </thead>
+        <tbody>
+          {{!-- INSERT PAST TRAINING HERE --}}
+          {{#each pastTraining}}
+            {{> past-training}}
+          {{/each}}
+        </tbody>
+      </table>
+      </div>

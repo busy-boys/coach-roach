@@ -1,0 +1,23 @@
+<tr>
+  <th scope="row">{{format_date start_time}}</th>
+  <td>{{format_time start_time}}</td>
+  <td>{{duration}} mins</td>
+  <td>{{topic}}</td>
+  <td>{{location}}</td>
+  {{#if superintendent_id}}
+    <td>{{superintendent.first_name}} {{superintendent.last_name}}</td>
+  {{else}}
+    <td>None</td>
+  {{/if}}
+  {{#if senior_coordinator_id}}
+    <td>{{senior_coordinator.first_name}} {{senior_coordinator.last_name}}</td>
+  {{else}}
+    <td>None</td>
+  {{/if}}
+  {{#if supervisor_id}}
+    <td>{{supervisor.first_name}} {{supervisor.last_name}}</td>
+  {{else}}
+    <td>None</td>
+  {{/if}}
+
+</tr>
