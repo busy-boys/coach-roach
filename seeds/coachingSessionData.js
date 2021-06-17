@@ -18,6 +18,13 @@ const newDate13 = new Date('June 20, 2021 03:44:00');
 const newDate14 = new Date('June 21, 2021 03:44:00');
 const newDate15 = new Date('June 22, 2021 03:44:00');
 
+const newDate16 = new Date('April 18, 2021 03:44:00');
+const newDate17 = new Date('April 20, 2021 03:44:00');
+const newDate18 = new Date('May 20, 2021 03:44:00');
+const newDate19 = new Date('May 21, 2021 03:44:00');
+const newDate20 = new Date('January 22, 2021 03:44:00');
+const newDate21 = new Date('January 23, 2021 03:44:00');
+
 const coachingData = [
   {
     start_time: newDate1,
@@ -213,6 +220,17 @@ const coachingData = [
     senior_coordinator_id: 1004,
     supervisor_id: 1010,
     superintendent_id: 1001,
+  },
+  {
+    start_time: newDate16,
+    location: 'Perth',
+    duration: 3,
+    topic: 'Leadership in the Field',
+    complete: true,
+    signedOff: false,
+    senior_coordinator_id: 1005,
+    supervisor_id: 1007,
+    superintendent_id: 1002,
   },
 ];
 
