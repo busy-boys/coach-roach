@@ -95,8 +95,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/mygraphdata', async (res, req) => {
-  const testID = [1005];
+router.get('/mygraphdata', async (req, res) => {
   try {
     const dbSessionData = await CoachingSession.findAll({
       attributes: [
@@ -110,9 +109,9 @@ router.get('/mygraphdata', async (res, req) => {
         // Getting all sessions where complete = true AND
         // where one of the participants have an ID that matches testID
         [Op.or]: {
-          senior_coordinator_id: testID,
-          supervisor_id: testID,
-          superintendent_id: testID,
+          senior_coordinator_id: req.session.userID,
+          supervisor_id: req.session.userID,
+          superintendent_id: req.session.userID,
         },
         [Op.and]: { complete: true },
       },
@@ -135,22 +134,24 @@ router.get('/mygraphdata', async (res, req) => {
       totalHoursForAllMonths.push(sumOfHoursPerMonth);
     }
 
-    const graphData = {
-      January: totalHoursForAllMonths[0],
-      February: totalHoursForAllMonths[1],
-      March: totalHoursForAllMonths[2],
-      April: totalHoursForAllMonths[3],
-      May: totalHoursForAllMonths[4],
-      June: totalHoursForAllMonths[5],
-      July: totalHoursForAllMonths[6],
-      August: totalHoursForAllMonths[7],
-      September: totalHoursForAllMonths[8],
-      October: totalHoursForAllMonths[9],
-      November: totalHoursForAllMonths[10],
-      December: totalHoursForAllMonths[11],
-    };
+    const graphData = [
+      { month: 'January', minutes: totalHoursForAllMonths[0] },
+      { month: 'February', minutes: totalHoursForAllMonths[1] },
+      { month: 'March', minutes: totalHoursForAllMonths[2] },
+      { month: 'April', minutes: totalHoursForAllMonths[3] },
+      { month: 'May', minutes: totalHoursForAllMonths[4] },
+      { month: 'June', minutes: totalHoursForAllMonths[5] },
+      { month: 'July', minutes: totalHoursForAllMonths[6] },
+      { month: 'August', minutes: totalHoursForAllMonths[7] },
+      { month: 'September', minutes: totalHoursForAllMonths[8] },
+      { month: 'October', minutes: totalHoursForAllMonths[9] },
+      { month: 'November', minutes: totalHoursForAllMonths[10] },
+      { month: 'December', minutes: totalHoursForAllMonths[11] },
+    ];
     console.log('graphData:', graphData);
+    return res.status(200).json(graphData);
   } catch (err) {
+    // res.status(500).json(err);
     console.error(err);
   }
 });

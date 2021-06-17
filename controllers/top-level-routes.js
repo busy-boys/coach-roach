@@ -125,7 +125,7 @@ router.get('/mysessions', authCheck, async (req, res) => {
     console.error(error);
   }
 });
-router.get('/mystats', async (req, res) => {
+router.get('/mystats', authCheck, async (req, res) => {
   try {
     res.render('my-stats');
   } catch (err) {
