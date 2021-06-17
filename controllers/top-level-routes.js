@@ -47,12 +47,11 @@ router.get('/login', async (req, res) => {
   }
 });
 
-// TODO put auth CHECK back in!!!!!
-router.get('/mysessions', async (req, res) => {
+router.get('/mysessions', authCheck, async (req, res) => {
   try {
     // Get the loggedIn users session data.
-    // const { userID } = req.session;
-    const userID = 1002;
+    // const userID = 1003;
+    const { userID } = req.session;
     const dbSessionsData = await CoachingSession.findAll({
       where: {
         [Op.or]: {
