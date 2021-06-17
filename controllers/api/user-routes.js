@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
-const { User } = require('../../models');
+const { Op } = require('sequelize');
+const { User, CoachingSession } = require('../../models');
 
 // create a user
 router.post('/', async (req, res) => {
@@ -91,6 +92,67 @@ router.get('/', async (req, res) => {
     res.json(dbAllUserData);
   } catch (error) {
     console.error(error);
+  }
+});
+
+router.get('/mygraphdata', async (req, res) => {
+  try {
+    const dbSessionData = await CoachingSession.findAll({
+      attributes: [
+        'start_time',
+        'duration',
+        'senior_coordinator_id',
+        'supervisor_id',
+        'superintendent_id',
+      ],
+      where: {
+        // Getting all sessions where complete = true AND
+        // where one of the participants have an ID that matches testID
+        [Op.or]: {
+          senior_coordinator_id: req.session.userID,
+          supervisor_id: req.session.userID,
+          superintendent_id: req.session.userID,
+        },
+        [Op.and]: { complete: true },
+      },
+    });
+    const cleanData = dbSessionData.map((data) => data.get({ plain: true }));
+
+    const totalHoursForAllMonths = [];
+    for (let i = 0; i < 12; i++) {
+      const getAllHoursPerMonth = cleanData.filter(
+        (data) => data.start_time.getMonth() === i
+      );
+
+      // THis will grab all the values for the duration parameter in every June session.
+      const getAllMonthlyHours = getAllHoursPerMonth.map((a) => a.duration);
+
+      // This adds them up to get total hours per month. This value needs to be passed to the graphing function.
+      const sumOfHoursPerMonth = getAllMonthlyHours.reduce((a, b) => a + b, 0);
+
+      // Adding
+      totalHoursForAllMonths.push(sumOfHoursPerMonth);
+    }
+
+    const graphData = [
+      { month: 'January', minutes: totalHoursForAllMonths[0] },
+      { month: 'February', minutes: totalHoursForAllMonths[1] },
+      { month: 'March', minutes: totalHoursForAllMonths[2] },
+      { month: 'April', minutes: totalHoursForAllMonths[3] },
+      { month: 'May', minutes: totalHoursForAllMonths[4] },
+      { month: 'June', minutes: totalHoursForAllMonths[5] },
+      { month: 'July', minutes: totalHoursForAllMonths[6] },
+      { month: 'August', minutes: totalHoursForAllMonths[7] },
+      { month: 'September', minutes: totalHoursForAllMonths[8] },
+      { month: 'October', minutes: totalHoursForAllMonths[9] },
+      { month: 'November', minutes: totalHoursForAllMonths[10] },
+      { month: 'December', minutes: totalHoursForAllMonths[11] },
+    ];
+    console.log('graphData:', graphData);
+    return res.status(200).json(graphData);
+  } catch (err) {
+    // res.status(500).json(err);
+    console.error(err);
   }
 });
 

@@ -1,52 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-info">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Coaching Solutions</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/login">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/login">Signup</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <br><br>
-      <div class="container">
-        <h2 class="display-4">My Progress</h2>
-        <br>
-        <div class="container">
-            <h3 class="display-6">Hours per Month</h3>
-            <br><br>
-            <canvas id="myChart" width="60vw" height="20vh"></canvas>
-        </div>
-        <br><br>
-        <br><br>
-        <div>
-            <h3 class="display-6">Coaching Break Down</h3>
-            <canvas id="myChart2" width="30vw" height="15vh"></canvas>
-        </div>
-      </div>
-      <!-- Chart.js Script -->
-      <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"
-      integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-      <!-- chart.js annoation plugin -->
-      <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.0.2/chartjs-plugin-annotation.min.js"
-      integrity="sha512-FuXN8O36qmtA+vRJyRoAxPcThh/1KJJp7WSRnjCpqA+13HYGrSWiyzrCHalCWi42L5qH1jt88lX5wy5JyFxhfQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="./graph-dashboard-test.js"></script>
+<br /><br />
+<div class="container">
+  <h2 class="display-4">My Progress</h2>
+  <br />
+  <div class="container">
+    <h3 class="display-6">Minutes per Month</h3>
+    <br /><br />
+    <canvas id="myChart" width="60vw" height="20vh"></canvas>
+  </div>
+  <br /><br />
+  <br /><br />
+  {{! <div>
+    <h3 class="display-6">Coaching Break Down</h3>
+    <canvas id="myChart2" width="30vw" height="15vh"></canvas>
+  </div> }}
+</div>
+<!-- Chart.js Script -->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"
+  integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<!-- chart.js annoation plugin -->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.0.2/chartjs-plugin-annotation.min.js"
+  integrity="sha512-FuXN8O36qmtA+vRJyRoAxPcThh/1KJJp7WSRnjCpqA+13HYGrSWiyzrCHalCWi42L5qH1jt88lX5wy5JyFxhfQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+  integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<script src="/js/my-stats.js"></script>

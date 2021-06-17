@@ -50,6 +50,7 @@ router.get('/login', async (req, res) => {
 router.get('/mysessions', authCheck, async (req, res) => {
   try {
     // Get the loggedIn users session data.
+    // const userID = 1003;
     const { userID } = req.session;
     const dbSessionsData = await CoachingSession.findAll({
       where: {
@@ -124,7 +125,70 @@ router.get('/mysessions', authCheck, async (req, res) => {
     console.error(error);
   }
 });
+router.get('/mystats', authCheck, async (req, res) => {
+  try {
+    res.render('my-stats', {
+      loggedIn: req.session.loggedIn,
+      userId: req.session.userID,
+      firstName: req.session.firstName,
+      lastName: req.session.lastName,
+      email: req.session.email,
+    });
+  } catch (err) {
+    console.error(err);
+  }
+});
 
-// TODO add route for manager
+router.get('/booksession', authCheck, async (req, res) => {
+  // get managers unto separate arrays
+  const superintendentsUnsanitised = await User.findAll({
+    attributes: ['id', 'first_name', 'last_name'],
+    where: {
+      role: 'Superintendent',
+    },
+  });
+
+  const seniorCoordinatorsUnsanitised = await User.findAll({
+    attributes: ['id', 'first_name', 'last_name'],
+    where: {
+      role: 'Senior Coordinator',
+    },
+  });
+
+  const supervisorsUnsanitised = await User.findAll({
+    attributes: ['id', 'first_name', 'last_name'],
+    where: {
+      role: 'Supervisor',
+    },
+  });
+
+  // clean up the data; simplify each element to 3 attributes
+  const superintendents = superintendentsUnsanitised.map((superintendent) =>
+    superintendent.get({ plain: true })
+  );
+
+  const seniorCoordinators = seniorCoordinatorsUnsanitised.map(
+    (seniorCoordinator) => seniorCoordinator.get({ plain: true })
+  );
+
+  const supervisors = supervisorsUnsanitised.map((supervisor) =>
+    supervisor.get({ plain: true })
+  );
+
+  try {
+    res.render('book-session', {
+      loggedIn: req.session.loggedIn,
+      userId: req.session.userID,
+      firstName: req.session.firstName,
+      lastName: req.session.lastName,
+      email: req.session.email,
+      superintendents,
+      seniorCoordinators,
+      supervisors,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

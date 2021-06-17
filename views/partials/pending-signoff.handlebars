@@ -6,11 +6,17 @@
   <td>{{location}}</td>
   {{#if superintendent_id}}
     {{#if superintendent_signedOff}}
-      <td><i class="bi bi-check-square-fill" style="color:green"></i>
+      <td class="signed-on" data-session-id="{{id}}" data-user-role="superintendent_signedOff"><i
+          class="bi bi-check-square-fill"
+          style="color:green"
+        ></i>
         {{superintendent.first_name}}
         {{superintendent.last_name}}</td>
     {{else}}
-      <td><i class="bi bi-x-square-fill" style="color:red"></i>
+      <td class="signed-off" data-session-id="{{id}}" data-user-role="superintendent_signedOff"><i
+          class="bi bi-x-square-fill"
+          style="color:red"
+        ></i>
         {{superintendent.first_name}}
         {{superintendent.last_name}}</td>
     {{/if}}
@@ -19,11 +25,17 @@
   {{/if}}
   {{#if senior_coordinator_id}}
     {{#if senior_coordinator_signedOff}}
-      <td><i class="bi bi-check-square-fill" style="color:green"></i>
+      <td class="signed-on" data-session-id="{{id}}" data-user-role="senior_coordinator_signedOff"><i
+          class="bi bi-check-square-fill"
+          style="color:green"
+        ></i>
         {{senior_coordinator.first_name}}
         {{senior_coordinator.last_name}}</td>
     {{else}}
-      <td><i class="bi bi-x-square-fill" style="color:red"></i>
+      <td class="signed-off" data-session-id="{{id}}" data-user-role="senior_coordinator_signedOff"><i
+          class="bi bi-x-square-fill"
+          style="color:red"
+        ></i>
         {{senior_coordinator.first_name}}
         {{senior_coordinator.last_name}}</td>
     {{/if}}
@@ -32,11 +44,17 @@
   {{/if}}
   {{#if supervisor_id}}
     {{#if supervisor_signedOff}}
-      <td><i class="bi bi-check-square-fill" style="color:green"></i>
+      <td class="signed-on" data-session-id="{{id}}" data-user-role="supervisor_signedOff"><i
+          class="bi bi-check-square-fill"
+          style="color:green"
+        ></i>
         {{supervisor.first_name}}
         {{supervisor.last_name}}</td>
     {{else}}
-      <td><i class="bi bi-x-square-fill" style="color:red"></i>
+      <td class="signed-off" data-session-id="{{id}}" data-user-role="supervisor_signedOff"><i
+          class="bi bi-x-square-fill"
+          style="color:red"
+        ></i>
         {{supervisor.first_name}}
         {{supervisor.last_name}}</td>
     {{/if}}
