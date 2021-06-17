@@ -127,54 +127,15 @@ router.get('/mysessions', authCheck, async (req, res) => {
 });
 router.get('/mystats', authCheck, async (req, res) => {
   try {
-    res.render('my-stats');
+    res.render('my-stats', {
+      loggedIn: req.session.loggedIn,
+      userId: req.session.userID,
+      firstName: req.session.firstName,
+      lastName: req.session.lastName,
+      email: req.session.email,
+    });
   } catch (err) {
     console.error(err);
-  }
-});
-router.get('/mystats', async (req, res) => {
-  const testID = [1005];
-  try {
-    const dbSessionData = await CoachingSession.findAll({
-      attributes: [
-        'start_time',
-        'duration',
-        'senior_coordinator_id',
-        'supervisor_id',
-        'superintendent_id',
-      ],
-      where: {
-        // Getting all sessions where complete = true AND
-        // where one of the participants have an ID that matches testID
-        [Op.or]: {
-          senior_coordinator_id: testID,
-          supervisor_id: testID,
-          superintendent_id: testID,
-        },
-        [Op.and]: { complete: true },
-      },
-    });
-    const cleanData = dbSessionData.map((data) => data.get({ plain: true }));
-
-    // (jan is 0, june is 5).
-    // This will give me all the values in the cleanData array where start_time has a month value of june.
-    // Eventually there will be a switch function or something here to get the values for each month.
-    const getAllJunes = cleanData.filter(
-      (data) => data.start_time.getMonth() === 5
-    );
-    console.log('getAllJunes', getAllJunes);
-
-    // THis will grab all the values for the duration parameter in every June session.
-    const allJuneDurations = getAllJunes.map((a) => a.duration);
-    console.log(allJuneDurations);
-
-    // This adds them up to get total hours per month. This value needs to be passed to the graphing function.
-    const totalDurationsforJune = allJuneDurations.reduce((a, b) => a + b, 0);
-    console.log(totalDurationsforJune);
-
-    res.render('my-stats', { cleanData });
-  } catch (err) {
-    res.status(500).json(err);
   }
 });
 
