@@ -131,6 +131,13 @@ router.get('/booksession', (req, res) => {
     res.status(500).json(err);
   }
 });
+router.get('/booksession', (req, res) => {
+  try {
+    res.render('book-session');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // TODO add route for manager
 
