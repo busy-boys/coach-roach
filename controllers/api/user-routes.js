@@ -96,7 +96,11 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/mygraphdata', async (req, res) => {
+  // req.session.userID = 1004;
+  console.log(req.session.userID);
   try {
+    // const testSessionData = await CoachingSession.findAll();
+    // console.log(testSessionData);
     const dbSessionData = await CoachingSession.findAll({
       attributes: [
         'start_time',
@@ -104,6 +108,7 @@ router.get('/mygraphdata', async (req, res) => {
         'senior_coordinator_id',
         'supervisor_id',
         'superintendent_id',
+        'complete',
       ],
       where: {
         // Getting all sessions where complete = true AND
@@ -113,11 +118,18 @@ router.get('/mygraphdata', async (req, res) => {
           supervisor_id: req.session.userID,
           superintendent_id: req.session.userID,
         },
-        [Op.and]: { complete: true },
+        // [Op.and]: { complete: true },
       },
     });
-    const cleanData = dbSessionData.map((data) => data.get({ plain: true }));
+    // console.log(dbSessionData);
+    const cleanDataAll = dbSessionData.map((data) => data.get({ plain: true }));
+    // delete from cleanData if complete = false
+    //! DH: added to get getter function working!
+    const cleanData = cleanDataAll.filter(function (session) {
+      return session.complete !== true;
+    });
 
+    console.log(cleanData);
     const totalHoursForAllMonths = [];
     for (let i = 0; i < 12; i++) {
       const getAllHoursPerMonth = cleanData.filter(
@@ -158,7 +170,7 @@ router.get('/mygraphdata', async (req, res) => {
 
 // Not sure about if I need to clear coookie here
 
-router.post('/logout', (req, res) => {
+router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.clearCookie();
