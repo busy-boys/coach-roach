@@ -31,6 +31,26 @@ CoachingSession.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false,
+      get() {
+        // get meeting count
+        let participantCount = 0;
+        if (this.getDataValue('supervisor_id')) participantCount += 1;
+        if (this.getDataValue('senior_coordinator_id')) participantCount += 1;
+        if (this.getDataValue('superintendent_id')) participantCount += 1;
+        // get signOff count
+        let signOffCount = 0;
+        if (this.getDataValue('supervisor_signedOff')) signOffCount += 1;
+        if (this.getDataValue('senior_coordinator_signedOff'))
+          signOffCount += 1;
+        if (this.getDataValue('superintendent_signedOff')) signOffCount += 1;
+        // return true if match
+        if (participantCount === signOffCount) {
+          return true;
+        }
+        // console.log(participantCount);
+        // console.log(signOffCount);
+        return false;
+      },
     },
     senior_coordinator_signedOff: {
       type: DataTypes.BOOLEAN,

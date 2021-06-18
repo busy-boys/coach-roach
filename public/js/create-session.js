@@ -20,10 +20,11 @@ createSessionForm.addEventListener('submit', async (event) => {
   }
 
   try {
-    console.log('before request');
+    // console.log('before request');
     const res = await axios.post('/api/coaching', bookingData);
-    console.log('after request');
-    console.log(res);
+    // console.log('after request');
+    // console.log(res);
+    window.location.href = '/mysessions';
   } catch (err) {
     console.error(err);
   }

@@ -70,8 +70,8 @@ const buildChart = async () => {
               line1: {
                 drawTime: 'afterDatasetsDraw',
                 type: 'line',
-                yMin: 9,
-                yMax: 9,
+                yMin: 90,
+                yMax: 90,
                 borderColor: 'rgba(95,214,0, .6)',
                 borderWidth: 6,
               },
