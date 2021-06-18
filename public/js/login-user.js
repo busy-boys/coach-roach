@@ -6,10 +6,13 @@ const loginForm = document.querySelector('#login-form');
 // handle signup submission
 loginForm.addEventListener('submit', async (event) => {
   event.preventDefault();
-  console.log(event.target);
+  // console.log(event.target);
   const data = new FormData(event.target);
   const loginData = Object.fromEntries(data.entries());
-  console.log(loginData);
+  if (loginData.manager_id === 'null') {
+    loginData.manager_id = null;
+  }
+  console.dir(loginData);
   try {
     const response = await axios.post('/api/user/login', loginData);
     console.log(response);
