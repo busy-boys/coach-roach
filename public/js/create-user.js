@@ -9,6 +9,9 @@ signupForm.addEventListener('submit', async (event) => {
   console.log(event.target);
   const data = new FormData(event.target);
   const signupData = Object.fromEntries(data.entries());
+  if (signupData.manager_id === 'null') {
+    signupData.manager_id = null;
+  }
   try {
     const response = await axios.post('/api/user', signupData);
     console.log(response);
