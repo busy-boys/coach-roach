@@ -96,7 +96,8 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/mygraphdata', async (req, res) => {
-  req.session.userID = 1004;
+  // req.session.userID = 1004;
+  console.log(req.session.userID);
   try {
     const dbSessionData = await CoachingSession.findAll({
       attributes: [
@@ -159,7 +160,7 @@ router.get('/mygraphdata', async (req, res) => {
 
 // Not sure about if I need to clear coookie here
 
-router.post('/logout', (req, res) => {
+router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.clearCookie();
