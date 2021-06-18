@@ -96,6 +96,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/mygraphdata', async (req, res) => {
+  req.session.userID = 1004;
   try {
     const dbSessionData = await CoachingSession.findAll({
       attributes: [
