@@ -4,52 +4,97 @@
     <form id="booking-form">
       <div class="mb-3">
         <label for="coaching-start" class="form-label">Date</label>
-        <input name="date" type="datetime-local" class="form-control" id="date" placeholder="1/1/21" />
+        <input
+          name="date"
+          type="datetime-local"
+          class="form-control"
+          id="date"
+          placeholder="1/1/21"
+        />
       </div>
       <div class="mb-3">
         <label for="coaching-duration" class="form-label">Duration (minutes)</label>
-        <input name="duration" type="text" class="form-control" id="duration" placeholder="60" />
+        <input
+          name="duration"
+          type="text"
+          class="form-control"
+          id="duration"
+          placeholder="60"
+        />
       </div>
       <div class="mb-3">
         <label for="coaching-location" class="form-label">Location</label>
-        <input name="location" type="text" class="form-control" id="location" placeholder="Perth" />
+        <input
+          name="location"
+          type="text"
+          class="form-control"
+          id="location"
+          placeholder="Perth"
+        />
       </div>
       <div class="mb-3">
         <label for="coaching-topic" class="form-label">Topic</label>
-        <input name="topic" type="text" class="form-control" id="topic" placeholder="Management" />
+        <select required name="topic" class="form-control" id="topic">
+          <option disabled selected>Choose your topic...</option>
+          <option>Pre-start meeting</option>
+          <option>Leadership in the Field</option>
+          <option>Pre-task hazard assessment</option>
+          <option>Critical risk management</option>
+          <option>Quality Safety interaction</option>
+          <option>Safety spotlight</option>
+
+        </select>
       </div>
       <div class="mb-3">
         <label for="coaching-coordinator" class="form-label">Senior Coordinator</label>
-        <select name="senior_coordinator_id" class="form-control" id="booking-coordinatorid">
+        <select
+          name="senior_coordinator_id"
+          class="form-control"
+          id="booking-coordinatorid"
+        >
           <option selected>Choose Your Senior Coordinator...</option>
           <option value="null">No Senior Coordinator</option>
           {{!POPULATE COORDINATOR ID'S INTO HERE }}
           {{#each seniorCoordinators}}
-            <option value="{{this.id}}">{{this.first_name}} {{this.last_name}}</option>
+            <option value="{{this.id}}">{{this.first_name}}
+              {{this.last_name}}</option>
 
           {{/each}}
         </select>
       </div>
       <div class="mb-3">
         <label for="coaching-supervisor" class="form-label">Supervisor</label>
-        <select name="supervisor_id" class="form-control" id="booking-supervisorid">
+        <select
+          name="supervisor_id"
+          class="form-control"
+          id="booking-supervisorid"
+        >
           <option selected>Choose Your Supervisor...</option>
           <option value="null">No Supervisor</option>
           {{!POPULATE SUPERVISOR ID'S INTO HERE }}
           {{#each supervisors}}
-            <option value="{{this.id}}">{{this.first_name}} {{this.last_name}}</option>
+            <option value="{{this.id}}">{{this.first_name}}
+              {{this.last_name}}</option>
 
           {{/each}}
         </select>
       </div>
       <div class="mb-3">
-        <label for="coaching-superintendent" class="form-label">Superintendent</label>
-        <select name="superintendent_id" class="form-control" id="booking-coordinatorid">
+        <label
+          for="coaching-superintendent"
+          class="form-label"
+        >Superintendent</label>
+        <select
+          name="superintendent_id"
+          class="form-control"
+          id="booking-coordinatorid"
+        >
           <option selected>Choose Your Superintendent...</option>
           <option value="null">No Superintendent</option>
           {{!POPULATE SUPERINTENDENT ID'S INTO HERE }}
           {{#each superintendents}}
-            <option value="{{this.id}}">{{this.first_name}} {{this.last_name}}</option>
+            <option value="{{this.id}}">{{this.first_name}}
+              {{this.last_name}}</option>
 
           {{/each}}
         </select>
