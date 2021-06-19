@@ -1,6 +1,83 @@
-# UNTITLED PROJECT 2
+# Split Coaching - A coaching record keeping platform
 
 [![Deploy dokku](https://github.com/busy-boys/project-2/actions/workflows/dokku-deploy.yml/badge.svg?branch=deploy)](https://github.com/busy-boys/project-2/actions/workflows/dokku-reply.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+Split Coaching is a record keeping platform that allows users to record coaching sessions in a range of different configurations. As the complexity of in-house training and coaching evolves, recording these sessions using traditional methods is not viable. Split coaching focuses on easy record keeping with accountability for all stakeholders and easy tracking of users target goals.
+
+Split Coaching has a range of features that differentiates itself from the competitors.
+
+- Session based authentication with secure persistent hashed passwords.
+- Users can login, create accounts and manage their coaching.
+- Simple booking and recording of sessions with pre-populated fields based on existing users and roles.
+- A sign-off system that requires all participants of the training to sign off the session in order for it to count towards a users goal.
+- An easy to interpret graph that shows minutes of training in relation to personal and team goals.
+
+## Table of Contents:
+
+- [Live Deploy](#Live-Deploy)
+- [License](#License)
+- [Screenshots](#Screenshots)
+- [Technology Stack](#Technology-Stack)
+- [Usage](#Usage)
+- [Tests](#Tests)
+- [Questions](#Questions)
+
+## Live Deploy
+
+A live deploy of this app can be found on Digital Ocean at: https://splitcoaching.busyboys.co/login
+
+## License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+This project is licensed under the **MIT License**: https://opensource.org/licenses/MIT
+
+## Screenshots
+
+#### Animated Gif Screenshot:
+
+![gif of tech blog](./assets/screenshots/coaching.gif)
+
+## Technology Stack
+
+- Digital Ocean (DNS & VPS): https://www.digitalocean.com/
+- dokku(Self Hosted Heroku): https://dokku.com/
+- mySQL via dokku(Database): https://github.com/dokku/dokku-mysql
+- WesBos Linting Config: https://github.com/wesbos/eslint-config-wesbos
+- expressJS: http://expressjs.com/
+- Sequelize ORM: https://sequelize.org/
+- Handlebars: https://handlebarsjs.com/
+- Bootstrap(CSS Framework): https://getbootstrap.com/
+- axios(Frontend API Requests): https://github.com/axios/axios
+- charts.js(progress graphs): https://www.chartjs.org/
+
+## Usage
+
+This software needs access to a mySQL database for storage of persistent information. `./conf/connection.js` should be edited to reflect the settings of the chosen server. For local deployment/testing all database credentials should be stored in `.env`.
+
+To use the program simply run the program from your preferred terminal and follow the prompts.
+
+```bash
+npm start
+```
+
+To prefill the database use the included seed files.
+
+```bash
+npm run seed
+```
+
+## Tests
+
+No tests have been written for this software.
+
+## Questions
+
+If you have any further questions you can get in contact with the creator through the following methods:
+
+- https://github.com/Busy-Boys/
+
+## TEMP INFO TO REMOVE!!!!!!
 
 ## Naming Conventions
 
