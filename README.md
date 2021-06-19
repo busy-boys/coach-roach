@@ -1,7 +1,8 @@
 # Split Coaching - A coaching record keeping platform
 
 [![Deploy dokku](https://github.com/busy-boys/project-2/actions/workflows/dokku-deploy.yml/badge.svg?branch=deploy)](https://github.com/busy-boys/project-2/actions/workflows/dokku-reply.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\
+\
 Split Coaching is a record keeping platform that allows users to record coaching sessions in a range of different configurations. As the complexity of in-house training and coaching evolves, recording these sessions using traditional methods is not viable. Split coaching focuses on easy record keeping with accountability for all stakeholders and easy tracking of users target goals.
 
 Split Coaching has a range of features that differentiates itself from the competitors.
