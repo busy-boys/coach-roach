@@ -22,6 +22,7 @@ Coach Roach has a range of features that differentiates itself from the competit
 - [Usage](#Usage)
 - [Tests](#Tests)
 - [Questions](#Questions)
+- [Planning Artifacts](#Planning-Artifacts)
 
 ## Live Deploy
 
@@ -78,33 +79,6 @@ If you have any further questions you can get in contact with the creator throug
 
 - https://github.com/Busy-Boys/
 
-## TEMP INFO TO REMOVE!!!!!!
-
-## Naming Conventions
-
-### GH Issues
-
-`<storymap-activity-code> - issue/task title`\
-eg.\
-`A.10.10 - Password Hashing`
-
-### Branches
-
-`<relevant-gh-issue>`\
-eg.\
-`A.10.10-password-hashing`
-
-### Commits
-
-`<storymap-activity-code>-<commit-messgae>`\
-eg.\
-`A.10.10: brypt hook working on seeds`
-
-## Branches
-
-- main: this will be used the same as last project. This should be the working version with merges made to this branch when an issue/task is fixed/finished.
-- deploy: this is set to automatically update the server after a PR/merge to this branch.This will be done when we are happy with the state of main and we can then PR main over to deploy. This should help us avoid breaking changes from ending up on the live version of the site.
-
 ## Linting Setup
 
 I have included all the config files in the repo so you should just be able to:
@@ -136,6 +110,3 @@ I have included all the config files in the repo so you should just be able to:
 - Ideation Board (miro) - https://miro.com/welcomeonboard/Mbzl4pO1mWUlMURa5UAAnufKJ4XSeDcLAULnCjJJAMmEj6suUGYhHnw66tNyATPY
 - Schedule (GSheet): https://docs.google.com/spreadsheets/d/1iqlQa7wTcS9SmBjPjXeTSgzkw7I3HLHaBQAS7DDayVg/edit?usp=sharing
 
-### Last Projects Docs For Reference
-
-- Presentation (gDocs - DH): https://docs.google.com/presentation/d/1gv9gyDsamKki7G_IJToTdn2gSMKsKPZG3JOmLZzKVPc/edit?usp=sharing
