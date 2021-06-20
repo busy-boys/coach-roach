@@ -1,11 +1,11 @@
-# Split Coaching - A coaching record keeping platform
+# Coach Roach - A coaching record keeping platform
 
 [![Deploy dokku](https://github.com/busy-boys/project-2/actions/workflows/dokku-deploy.yml/badge.svg?branch=deploy)](https://github.com/busy-boys/project-2/actions/workflows/dokku-reply.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\
 \
-Split Coaching is a record keeping platform that allows users to record coaching sessions in a range of different configurations. As the complexity of in-house training and coaching evolves, recording these sessions using traditional methods is not viable. Split coaching focuses on easy record keeping with accountability for all stakeholders and easy tracking of users target goals.
+Coach Roach is a record keeping platform that allows users to record coaching sessions in a range of different configurations. As the complexity of in-house training and coaching evolves, recording these sessions using traditional methods is not viable. Coach Roach focuses on easy record keeping with accountability for all stakeholders and easy tracking of users target goals.
 
-Split Coaching has a range of features that differentiates itself from the competitors.
+Coach Roach has a range of features that differentiates itself from the competitors.
 
 - Session based authentication with secure persistent hashed passwords.
 - Users can login, create accounts and manage their coaching.
@@ -25,7 +25,7 @@ Split Coaching has a range of features that differentiates itself from the compe
 
 ## Live Deploy
 
-A live deploy of this app can be found on Digital Ocean at: https://splitcoaching.busyboys.co/login
+A live deploy of this app can be found on Digital Ocean at: https://coachroach.me/
 
 ## License
 
