@@ -5,23 +5,31 @@ const allSignOffCells = document.querySelectorAll('.signed-off');
 const allSignOnCells = document.querySelectorAll('.signed-on');
 
 allSignOffCells.forEach(async (cell) => {
-  cell.addEventListener('click', async (e) => {
-    const { sessionId, userRole } = e.target.dataset;
-    await axios.put(`/api/coaching/${sessionId}`, {
-      [userRole]: true,
-    });
-    window.location.reload();
-  });
+  cell.addEventListener(
+    'click',
+    async (event) => {
+      const { sessionId, userRole } = event.target.dataset;
+      await axios.put(`/api/coaching/${sessionId}`, {
+        [userRole]: true,
+      });
+      window.location.reload();
+    },
+    { once: true }
+  );
 });
 
 allSignOnCells.forEach((cell) => {
-  cell.addEventListener('click', async (e) => {
-    const { sessionId, userRole } = e.target.dataset;
-    await axios.put(`/api/coaching/${sessionId}`, {
-      [userRole]: false,
-    });
-    window.location.reload();
-  });
+  cell.addEventListener(
+    'click',
+    async (event) => {
+      const { sessionId, userRole } = event.target.dataset;
+      await axios.put(`/api/coaching/${sessionId}`, {
+        [userRole]: false,
+      });
+      window.location.reload();
+    },
+    { once: true }
+  );
 });
 
 // complete: req.body.complete,
