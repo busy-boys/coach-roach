@@ -3,6 +3,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{!-- links for favicons --}}
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    {{!-- bootstrap --}}
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
@@ -19,12 +25,14 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="/css/my-sessions.css" />
-    <title>Coaching</title>
+    <title>Roach Coach</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <nav class="navbar navbar-expand-lg navbar-light bg-info p-1">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Coaching Solutions</a>
+        <a class="p-0 navbar-brand" href="#">
+          <img class="m-0 p-0" src="/images/logo.png" height="40px" alt="" srcset="">
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -55,14 +63,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="/api/user/logout">Logout</a>
               </li>
-              <li class="nav-item">
-                <b>
-                  <a class="nav-link" href="/mystats">Hi,
-                    {{firstName}}
-                    {{lastName}}</a>
 
-                </b>
-              </li>
             {{else}}
               <li class="nav-item">
                 <a class="nav-link" href="/login">Login</a>
@@ -72,11 +73,21 @@
               </li>
             {{/if}}
           </ul>
-          <ul class="navbar-nav justify-content-end">
-            <li class="nav-item">
+          <ul class="navbar-nav justify-content">
+            {{#if loggedIn}}
+              <li class="nav-item">
+                <b>
+                  <a class="nav-link" href="/mystats">Hi,
+                    {{firstName}}
+                    {{lastName}}</a>
+
+                </b>
+              </li>
+            {{/if}}
+            <li class="nav-item pt-1">
               <a href="https://github.com/busy-boys/project-2">
                 <i
-                  class="bi bi-github"
+                  class="bi bi-github align-middle"
                   style="font-size: 1.5rem; color: black;"
                 ></i>
               </a>

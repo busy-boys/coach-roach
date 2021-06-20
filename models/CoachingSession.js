@@ -45,10 +45,15 @@ CoachingSession.init(
         if (this.getDataValue('superintendent_signedOff')) signOffCount += 1;
         // return true if match
         if (participantCount === signOffCount) {
+          console.log(
+            `participants:${participantCount} signOff:${signOffCount}`
+          );
+          console.log('get is true');
           return true;
         }
         // console.log(participantCount);
         // console.log(signOffCount);
+        console.log('get is false');
         return false;
       },
     },
