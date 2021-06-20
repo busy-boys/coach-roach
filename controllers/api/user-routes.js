@@ -102,14 +102,14 @@ router.get('/mygraphdata', async (req, res) => {
     // const testSessionData = await CoachingSession.findAll();
     // console.log(testSessionData);
     const dbSessionData = await CoachingSession.findAll({
-      attributes: [
-        'start_time',
-        'duration',
-        'senior_coordinator_id',
-        'supervisor_id',
-        'superintendent_id',
-        'complete',
-      ],
+      // attributes: [
+      //   'start_time',
+      //   'duration',
+      //   'senior_coordinator_id',
+      //   'supervisor_id',
+      //   'superintendent_id',
+      //   'complete',
+      // ],
       where: {
         // Getting all sessions where complete = true AND
         // where one of the participants have an ID that matches testID
@@ -125,8 +125,9 @@ router.get('/mygraphdata', async (req, res) => {
     const cleanDataAll = dbSessionData.map((data) => data.get({ plain: true }));
     // delete from cleanData if complete = false
     //! DH: added to get getter function working!
+    console.log(cleanDataAll);
     const cleanData = cleanDataAll.filter(function (session) {
-      return session.complete !== true;
+      return session.complete === true;
     });
 
     console.log(cleanData);
