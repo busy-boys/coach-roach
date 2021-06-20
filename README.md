@@ -1,11 +1,11 @@
-# Split Coaching - A coaching record keeping platform
+# Coach Roach - A coaching record keeping platform
 
 [![Deploy dokku](https://github.com/busy-boys/project-2/actions/workflows/dokku-deploy.yml/badge.svg?branch=deploy)](https://github.com/busy-boys/project-2/actions/workflows/dokku-reply.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\
 \
-Split Coaching is a record keeping platform that allows users to record coaching sessions in a range of different configurations. As the complexity of in-house training and coaching evolves, recording these sessions using traditional methods is not viable. Split coaching focuses on easy record keeping with accountability for all stakeholders and easy tracking of users target goals.
+Coach Roach is a record keeping platform that allows users to record coaching sessions in a range of different configurations. As the complexity of in-house training and coaching evolves, recording these sessions using traditional methods is not viable. Coach Roach focuses on easy record keeping with accountability for all stakeholders and easy tracking of users target goals.
 
-Split Coaching has a range of features that differentiates itself from the competitors.
+Coach Roach has a range of features that differentiates itself from the competitors.
 
 - Session based authentication with secure persistent hashed passwords.
 - Users can login, create accounts and manage their coaching.
@@ -25,7 +25,7 @@ Split Coaching has a range of features that differentiates itself from the compe
 
 ## Live Deploy
 
-A live deploy of this app can be found on Digital Ocean at: https://splitcoaching.busyboys.co/login
+A live deploy of this app can be found on Digital Ocean at: https://coachroach.me/
 
 ## License
 
@@ -100,7 +100,7 @@ eg.\
 eg.\
 `A.10.10: brypt hook working on seeds`
 
-## Brances
+## Branches
 
 - main: this will be used the same as last project. This should be the working version with merges made to this branch when an issue/task is fixed/finished.
 - deploy: this is set to automatically update the server after a PR/merge to this branch.This will be done when we are happy with the state of main and we can then PR main over to deploy. This should help us avoid breaking changes from ending up on the live version of the site.
@@ -129,6 +129,7 @@ I have included all the config files in the repo so you should just be able to:
 
 ### Current Documents
 
+- Presentation https://docs.google.com/presentation/d/16bOuRWEG3kOo6sVeUbNjvz8cVELjWxbuA2VGLrDJk1o/edit#slide=id.gcdef2e91f5_0_8
 - User Story Map - https://miro.com/app/board/o9J_lAf5CJ8=/
 - Press Release - https://docs.google.com/document/d/1Ckb6kDcDNbExon3pL5g2TDfwMXjKRPVZW8NiJOsPpeU/edit?usp=sharing
 - Retro from last Project (miro) - https://miro.com/app/board/o9J_lIEb32Q=/
