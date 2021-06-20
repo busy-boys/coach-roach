@@ -12,7 +12,7 @@ const buildChart = async () => {
         // labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
         datasets: [
           {
-            label: 'Hrs of Coaching',
+            label: 'Mins of Coaching',
             // TODO TEST WITH DATA BELOW, THEN PARSE IN DATA FROM AXIOS
             // data: [
             //   { month: 'Jan', hours: 12 },

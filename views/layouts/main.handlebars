@@ -63,14 +63,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="/api/user/logout">Logout</a>
               </li>
-              <li class="nav-item">
-                <b>
-                  <a class="nav-link" href="/mystats">Hi,
-                    {{firstName}}
-                    {{lastName}}</a>
 
-                </b>
-              </li>
             {{else}}
               <li class="nav-item">
                 <a class="nav-link" href="/login">Login</a>
@@ -80,11 +73,21 @@
               </li>
             {{/if}}
           </ul>
-          <ul class="navbar-nav justify-content-end">
-            <li class="nav-item">
+          <ul class="navbar-nav justify-content">
+            {{#if loggedIn}}
+              <li class="nav-item">
+                <b>
+                  <a class="nav-link" href="/mystats">Hi,
+                    {{firstName}}
+                    {{lastName}}</a>
+
+                </b>
+              </li>
+            {{/if}}
+            <li class="nav-item pt-1">
               <a href="https://github.com/busy-boys/project-2">
                 <i
-                  class="bi bi-github"
+                  class="bi bi-github align-middle"
                   style="font-size: 1.5rem; color: black;"
                 ></i>
               </a>
