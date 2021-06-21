@@ -4,6 +4,9 @@ const allSignOffCells = document.querySelectorAll('.signed-off');
 // select all signon buttons
 const allSignOnCells = document.querySelectorAll('.signed-on');
 
+// select all delete buttons
+const allDeleteCells = document.querySelectorAll('.delete-session-btn');
+
 allSignOffCells.forEach(async (cell) => {
   cell.addEventListener(
     'click',
@@ -26,6 +29,19 @@ allSignOnCells.forEach((cell) => {
       await axios.put(`/api/coaching/${sessionId}`, {
         [userRole]: false,
       });
+      window.location.reload();
+    },
+    { once: true }
+  );
+});
+
+// delete sessions
+allDeleteCells.forEach((cell) => {
+  cell.addEventListener(
+    'click',
+    async (event) => {
+      const { sessionId } = event.target.dataset;
+      await axios.delete(`/api/coaching/${sessionId}`);
       window.location.reload();
     },
     { once: true }

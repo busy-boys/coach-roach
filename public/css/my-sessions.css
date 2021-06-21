@@ -5,3 +5,7 @@
 .signed-on {
   cursor: pointer;
 }
+
+.delete-session-btn {
+  cursor: pointer;
+}
